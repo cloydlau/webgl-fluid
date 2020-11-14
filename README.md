@@ -22,13 +22,13 @@ $ yarn add webgl-fluid
 <br/>
 
 ```js
-import WebglFuild from 'webgl-fluid'
+import WebglFluid from 'webgl-fluid'
 
 // Ready to go
-WebglFuild(document.querySelector('canvas'))
+WebglFluid(document.querySelector('canvas'))
 
 // Changing default configuration
-WebglFuild(document.querySelector('canvas'), {
+WebglFluid(document.querySelector('canvas'), {
   TRIGGER: 'hover', // Can be change to 'click'
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1024,
