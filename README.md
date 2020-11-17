@@ -8,9 +8,10 @@
 
 - √ ES module
 - √ Configurable
+- √ 0 dependency
 - √ Hover to activate by default, can also be Click
 - √ Support for background image
-- √ 0 dependency
+- √ Control whether to trigger multiple random splats when initialized
 
 <br/>
 
@@ -30,6 +31,7 @@ WebglFluid(document.querySelector('canvas'))
 
 // Changing default configuration
 WebglFluid(document.querySelector('canvas'), {
+  IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
   TRIGGER: 'hover', // Can be change to 'click'
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1024,
