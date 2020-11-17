@@ -31,6 +31,7 @@ export default function (el, config) {
   resizeCanvas()
 
   config = {
+    IMMEDIATE: true,
     TRIGGER: 'hover',
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
@@ -1066,7 +1067,7 @@ export default function (el, config) {
 
   updateKeywords()
   initFramebuffers()
-  multipleSplats(parseInt(Math.random() * 20) + 5)
+  config.IMMEDIATE && multipleSplats(parseInt(Math.random() * 20) + 5)
 
   let lastUpdateTime = Date.now()
   let colorUpdateTimer = 0.0
