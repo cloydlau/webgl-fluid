@@ -9,6 +9,7 @@
 - √ ES module
 - √ Configurable
 - √ Hover to activate by default, can also be Click
+- √ Support for background image
 - √ 0 dependency
 
 <br/>
@@ -83,4 +84,27 @@ canvas {
   height: 100vh;
 }
 </style>
+```
+
+<br/>
+
+Background image
+
+css
+
+```css
+canvas {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("back.png");
+  background-size: 100% 100%;
+}
+```
+
+js
+
+```js
+WebglFluid(document.querySelector('canvas'), {
+  TRANSPARENT: true
+})
 ```

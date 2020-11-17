@@ -58,7 +58,7 @@ export default function (el, config) {
     SUNRAYS: true,
     SUNRAYS_RESOLUTION: 196,
     SUNRAYS_WEIGHT: 1.0,
-    ...config
+    ...config,
   }
 
   function pointerPrototype () {
@@ -507,7 +507,20 @@ export default function (el, config) {
     }
 `)
 
-  const checkerboardShader = compileShader(gl.FRAGMENT_SHADER, `
+  const checkerboardShader = compileShader(gl.FRAGMENT_SHADER, config.TRANSPARENT ? `
+    precision highp float;
+    precision highp sampler2D;
+    varying vec2 vUv;
+    uniform sampler2D uTexture;
+    uniform float aspectRatio;
+    #define SCALE 25.0
+    void main () {
+        vec2 uv = floor(vUv * SCALE * vec2(aspectRatio, 1.0));
+        float v = mod(uv.x + uv.y, 2.0);
+        v = v * 0.1 + 0.8;
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+    }
+` : `
     precision highp float;
     precision highp sampler2D;
     varying vec2 vUv;
