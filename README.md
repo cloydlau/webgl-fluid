@@ -15,18 +15,66 @@
 
 <br>
 
-### Quick Start
+### Installation
+
 ![NPM](https://nodei.co/npm/webgl-fluid.png)
 
 <br>
 
-```js
+NPM
+
+```ts
 import WebGLFluid from 'webgl-fluid'
 
-// Ready to go
-WebGLFluid(document.querySelector('canvas'))
+WebGLFluid(document.querySelector('canvas'), {
+  // options
+})
+```
 
-// Changing default configuration
+<br>
+
+Without Build Tools
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<canvas style="width: 100vw; height: 100vh;"/>
+<script src="https://unpkg.com/webgl-fluid@0.0.4/dist/webgl-fluid.umd.min.js"></script>
+<script>
+window['webgl-fluid'].default(document.querySelector('canvas'), {
+  // options
+})
+</script>
+</body>
+</html>
+```
+
+<br>
+
+Module Script
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<canvas style="width: 100vw; height: 100vh;"/>
+<script type="module">
+import WebglFluid from 'https://cdn.skypack.dev/webgl-fluid@0.0.4'
+
+WebglFluid(document.querySelector('canvas'), {
+  // options
+})
+</script>
+</body>
+</html>
+```
+
+<br>
+
+### Options
+
+```ts
 WebGLFluid(document.querySelector('canvas'), {
   IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
   TRIGGER: 'hover', // Can be change to 'click'
@@ -60,9 +108,33 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-Example for Vue
+### Background image
+
+css
+
+```css
+canvas {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("xxx.png");
+    background-size: 100% 100%;
+}
+```
+
+js
+
+```ts
+WebGLFluid(document.querySelector('canvas'), {
+  TRANSPARENT: true
+})
+```
+
+<br>
+
+### Example for Vue
 
 ```vue
+
 <template>
   <canvas ref="canvas"/>
 </template>
@@ -83,27 +155,4 @@ canvas {
   height: 100vh;
 }
 </style>
-```
-
-<br>
-
-Background image
-
-css
-
-```css
-canvas {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("back.png");
-  background-size: 100% 100%;
-}
-```
-
-js
-
-```ts
-WebGLFluid(document.querySelector('canvas'), {
-  TRANSPARENT: true
-})
 ```
