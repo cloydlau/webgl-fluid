@@ -108,7 +108,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-### Background image
+### Background Image
 
 css
 
