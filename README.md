@@ -2,7 +2,7 @@
 
 **ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation**
 
-<br/>
+<br>
 
 ### Features
 
@@ -10,27 +10,27 @@
 - √ Configurable
 - √ 0 dependency
 - √ Hover to activate by default, can also be Click
-- √ Support for background image
+- √ Support background image
 - √ Control whether to trigger multiple random splats when initialized
 
-<br/>
+<br>
 
 ### Quick Start
 ![NPM](https://nodei.co/npm/webgl-fluid.png)
 ``` bash
-$ yarn add webgl-fluid
+$ npm add webgl-fluid
 ```
 
-<br/>
+<br>
 
 ```js
-import WebglFluid from 'webgl-fluid'
+import WebGLFluid from 'webgl-fluid'
 
 // Ready to go
-WebglFluid(document.querySelector('canvas'))
+WebGLFluid(document.querySelector('canvas'))
 
 // Changing default configuration
-WebglFluid(document.querySelector('canvas'), {
+WebGLFluid(document.querySelector('canvas'), {
   IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
   TRIGGER: 'hover', // Can be change to 'click'
   SIM_RESOLUTION: 128,
@@ -61,7 +61,7 @@ WebglFluid(document.querySelector('canvas'), {
 })
 ```
 
-<br/>
+<br>
 
 Example for Vue
 
@@ -71,11 +71,11 @@ Example for Vue
 </template>
 
 <script>
-import WebglFluid from 'webgl-fluid'
+import WebGLFluid from 'webgl-fluid'
 
 export default {
   mounted () {
-    WebglFluid(this.$refs.canvas)
+    WebGLFluid(this.$refs.canvas)
   }
 }
 </script>
@@ -88,7 +88,7 @@ canvas {
 </style>
 ```
 
-<br/>
+<br>
 
 Background image
 
@@ -105,8 +105,8 @@ canvas {
 
 js
 
-```js
-WebglFluid(document.querySelector('canvas'), {
+```ts
+WebGLFluid(document.querySelector('canvas'), {
   TRANSPARENT: true
 })
 ```
