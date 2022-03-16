@@ -1,12 +1,12 @@
 # webgl-fluid
 
-**ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation**
+**ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation**
 
 <br>
 
 ### Features
 
-- √ ES module
+- √ ESM & UMD
 - √ Configurable
 - √ 0 dependency
 - √ Hover to activate by default, can also be Click
