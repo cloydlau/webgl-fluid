@@ -17,9 +17,6 @@
 
 ### Quick Start
 ![NPM](https://nodei.co/npm/webgl-fluid.png)
-``` bash
-$ npm add webgl-fluid
-```
 
 <br>
 
