@@ -131,7 +131,36 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-### Example for Vue
+### Example for Vue 3
+
+```vue
+
+<template>
+  <canvas ref="canvas"/>
+</template>
+
+<script setup>
+import { onMounted, ref } from 'vue'
+import WebGLFluid from 'webgl-fluid'
+
+const canvas = ref(null)
+
+onMounted(() => {
+  WebGLFluid(canvas.value)
+})
+</script>
+
+<style>
+canvas {
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+```
+
+<br>
+
+### Example for Vue 2
 
 ```vue
 
