@@ -6,12 +6,12 @@ ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 
 ## Features
 
-- √ ESM & UMD
-- √ Configurable
-- √ 0 dependency
-- √ Hover to activate by default, can also be Click
-- √ Support background image
-- √ Control whether to trigger multiple random splats when initialized
+- ESM & UMD
+- Configurable
+- 0 dependency, 21kb gziped
+- Hover to activate by default, can also be Click
+- Support background image
+- Control whether to trigger multiple random splats when initialized
 
 <br>
 
