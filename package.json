@@ -4,17 +4,26 @@
   "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation",
   "private": false,
   "license": "MIT",
-  "main": "dist/webgl-fluid.umd.min.js",
+  "main": "./dist/webgl-fluid.umd.js",
+  "module": "./dist/webgl-fluid.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/webgl-fluid.es.js",
+      "require": "./dist/webgl-fluid.umd.js"
+    }
+  },
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lib": "vue-cli-service build --target lib --name webgl-fluid src/index.js"
+    "dev": "vite --open",
+    "build": "vite build",
+    "serve": "vite preview",
+    "clean": "rd /s /q .\\node_modules",
+    "ri": "npm run clean && pnpm i",
+    "u": "node scripts/upgrade.js",
+    "r": "node scripts/release.js",
+    "rs": "node scripts/release.js --straightforward"
   },
   "dependencies": {},
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12"
+    "vite": "latest"
   }
 }

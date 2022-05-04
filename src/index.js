@@ -873,7 +873,7 @@ export default function (el, config) {
   let sunrays
   let sunraysTemp
 
-  let ditheringTexture = createTextureAsync('LDR_LLL1_0.png')
+  let ditheringTexture = createTextureAsync()
 
   const blurProgram = new Program(blurVertexShader, blurShader)
   const copyProgram = new Program(baseVertexShader, copyShader)

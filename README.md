@@ -1,10 +1,10 @@
 # webgl-fluid
 
-**ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation**
+ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 
 <br>
 
-### Features
+## Features
 
 - √ ESM & UMD
 - √ Configurable
@@ -15,7 +15,7 @@
 
 <br>
 
-### Installation
+## Installation
 
 ![NPM](https://nodei.co/npm/webgl-fluid.png)
 
@@ -40,9 +40,9 @@ Without Build Tools
 <html lang="en">
 <body>
 <canvas style="width: 100vw; height: 100vh;"/>
-<script src="https://unpkg.com/webgl-fluid@0.0.4/dist/webgl-fluid.umd.min.js"></script>
+<script src="https://unpkg.com/webgl-fluid@0.1.0/dist/webgl-fluid.umd.js"></script>
 <script>
-window['webgl-fluid'].default(document.querySelector('canvas'), {
+window['webgl-fluid'](document.querySelector('canvas'), {
   // options
 })
 </script>
@@ -60,7 +60,7 @@ Module Script
 <body>
 <canvas style="width: 100vw; height: 100vh;"/>
 <script type="module">
-import WebglFluid from 'https://cdn.skypack.dev/webgl-fluid@0.0.4'
+import WebglFluid from 'https://unpkg.com/webgl-fluid@0.1.0/dist/webgl-fluid.es.js'
 
 WebglFluid(document.querySelector('canvas'), {
   // options
@@ -72,7 +72,7 @@ WebglFluid(document.querySelector('canvas'), {
 
 <br>
 
-### Options
+## Options
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
@@ -108,7 +108,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-### Background Image
+## Background Image
 
 css
 
@@ -131,7 +131,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-### Example for Vue 3
+## Example for Vue 3
 
 ```vue
 
@@ -160,7 +160,7 @@ canvas {
 
 <br>
 
-### Example for Vue 2
+## Example for Vue 2
 
 ```vue
 
