@@ -1,6 +1,6 @@
 {
   "name": "webgl-fluid",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation",
   "private": false,
   "license": "MIT",
@@ -22,8 +22,12 @@
     "r": "node scripts/release.js",
     "rs": "node scripts/release.js --straightforward"
   },
-  "dependencies": {},
   "devDependencies": {
+    "chalk": "^4.1.2",
+    "enquirer": "latest",
+    "execa": "^4.1.0",
+    "minimist": "latest",
+    "semver": "latest",
     "vite": "latest"
   }
 }
