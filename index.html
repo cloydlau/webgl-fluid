@@ -17,14 +17,29 @@
       // options
     })
   </script> -->
-  
-  <script type="module">
-    import WebglFluid from '/dist/webgl-fluid.es.js'
+
+  <!-- <script type="module">
+    import WebglFluid from '/dist/webgl-fluid.mjs'
 
     WebglFluid(document.querySelector('canvas'), {
       // options
     })
+  </script> -->
+
+  <script src="https://unpkg.com/webgl-fluid@0.2"></script>
+  <script>
+    window['webgl-fluid'](document.querySelector('canvas'), {
+      // options
+    })
   </script>
+
+  <!-- <script type="module">
+    import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2'
+
+    WebglFluid(document.querySelector('canvas'), {
+      // options
+    })
+  </script> -->
 </body>
 
 </html>

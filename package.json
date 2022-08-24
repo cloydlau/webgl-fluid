@@ -1,33 +1,35 @@
 {
   "name": "webgl-fluid",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation",
   "private": false,
   "license": "MIT",
+  "repository": "https://github.com/cloydlau/webgl-fluid",
   "main": "./dist/webgl-fluid.umd.js",
-  "module": "./dist/webgl-fluid.es.js",
+  "module": "./dist/webgl-fluid.mjs",
+  "unpkg": "./dist/webgl-fluid.umd.js",
+  "jsdelivr": "./dist/webgl-fluid.umd.js",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
-      "import": "./dist/webgl-fluid.es.js",
-      "require": "./dist/webgl-fluid.umd.js"
-    }
+      "require": "./dist/webgl-fluid.umd.js",
+      "import": "./dist/webgl-fluid.mjs",
+      "browser": "./dist/webgl-fluid.mjs"
+    },
+    "./*": "./*"
   },
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "serve": "vite preview",
-    "clean": "rd /s /q .\\node_modules",
-    "ri": "npm run clean && pnpm i",
-    "u": "node scripts/upgrade.js",
-    "r": "node scripts/release.js",
-    "rs": "node scripts/release.js --straightforward"
+    "serve": "vite preview"
   },
   "devDependencies": {
-    "chalk": "^4.1.2",
-    "enquirer": "latest",
-    "execa": "^4.1.0",
-    "minimist": "latest",
-    "semver": "latest",
+    "@antfu/eslint-config": "latest",
+    "@cloydlau/scripts": "latest",
+    "case-police": "latest",
+    "husky": "latest",
     "vite": "latest"
   }
 }

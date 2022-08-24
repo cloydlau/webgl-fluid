@@ -11,7 +11,7 @@ ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
 - 0 dependency, 21kb gziped
 - Hover to activate by default, can also be Click
 - Support background image
-- Control whether to trigger multiple random splats when initialized
+- Control whether to trigger multiple random splats initially
 
 <br>
 
@@ -33,14 +33,14 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-Without Build Tools
+Without bundler / CDN
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <body>
 <canvas style="width: 100vw; height: 100vh;"/>
-<script src="https://unpkg.com/webgl-fluid@0.1.0/dist/webgl-fluid.umd.js"></script>
+<script src="https://unpkg.com/webgl-fluid@0.2"></script>
 <script>
 window['webgl-fluid'](document.querySelector('canvas'), {
   // options
@@ -60,7 +60,7 @@ Module Script
 <body>
 <canvas style="width: 100vw; height: 100vh;"/>
 <script type="module">
-import WebglFluid from 'https://unpkg.com/webgl-fluid@0.1.0/dist/webgl-fluid.es.js'
+import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2'
 
 WebglFluid(document.querySelector('canvas'), {
   // options
@@ -108,7 +108,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Background Image
+## Background image
 
 css
 
@@ -143,7 +143,7 @@ WebGLFluid(document.querySelector('canvas'), {
 import { onMounted, ref } from 'vue'
 import WebGLFluid from 'webgl-fluid'
 
-const canvas = ref(null)
+const canvas = ref()
 
 onMounted(() => {
   WebGLFluid(canvas.value)
