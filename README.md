@@ -60,7 +60,7 @@ Module Script
 <body>
 <canvas style="width: 100vw; height: 100vh;"/>
 <script type="module">
-import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2'
+import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs'
 
 WebglFluid(document.querySelector('canvas'), {
   // options
