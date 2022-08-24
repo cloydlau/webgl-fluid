@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "version": "0.2.0",
-  "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation",
+  "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "private": false,
   "license": "MIT",
   "repository": "https://github.com/cloydlau/webgl-fluid",

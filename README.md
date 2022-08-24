@@ -1,6 +1,6 @@
 # webgl-fluid
 
-ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
+ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.
 
 🤹‍♂️ [Online Playground](https://cloydlau.github.io/demo/webgl-fluid.html)
 
