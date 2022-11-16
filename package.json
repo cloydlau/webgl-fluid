@@ -1,17 +1,10 @@
 {
   "name": "webgl-fluid",
   "version": "0.2.0",
-  "description": "ES module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "private": false,
+  "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "license": "MIT",
   "repository": "https://github.com/cloydlau/webgl-fluid",
-  "main": "./dist/webgl-fluid.umd.js",
-  "module": "./dist/webgl-fluid.mjs",
-  "unpkg": "./dist/webgl-fluid.umd.js",
-  "jsdelivr": "./dist/webgl-fluid.umd.js",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "require": "./dist/webgl-fluid.umd.js",
@@ -20,16 +13,37 @@
     },
     "./*": "./*"
   },
+  "main": "./dist/webgl-fluid.umd.js",
+  "module": "./dist/webgl-fluid.mjs",
+  "unpkg": "./dist/webgl-fluid.umd.js",
+  "jsdelivr": "./dist/webgl-fluid.umd.js",
+  "files": [
+    "dist",
+    "docs"
+  ],
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "doc": "vitepress dev --open /README",
+    "release": "npx case-police --fix && npx lint-staged && vitest run && pnpm build && cl release"
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
     "@cloydlau/scripts": "latest",
     "case-police": "latest",
+    "eslint": "latest",
     "husky": "latest",
-    "vite": "latest"
+    "lint-staged": "latest",
+    "vite": "latest",
+    "vitepress": "latest"
+  },
+  "lint-staged": {
+    "!(demo/**/*)*.{js,ts,tsx,vue,md}": [
+      "eslint --fix"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

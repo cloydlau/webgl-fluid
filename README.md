@@ -1,29 +1,29 @@
 # webgl-fluid
 
-ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.
+<p align="left">
+  <a href="https://npmjs.com/package/webgl-fluid"><img src="https://img.shields.io/npm/v/webgl-fluid.svg" alt="npm package"></a>
+  <a href="https://npmjs.com/package/webgl-fluid"><img src="http://img.badgesize.io/https://unpkg.com/webgl-fluid/dist/webgl-fluid.umd.js?compression=gzip&label=gziped" alt="gziped"></a>
+  <a href="https://npmjs.com/package/webgl-fluid"><img src="https://img.shields.io/npm/dt/webgl-fluid" alt="downloads"></a>
+</p>
 
-🤹‍♂️ [Online Playground](https://cloydlau.github.io/demo/webgl-fluid.html)
+> ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.
+
+🕹 [Online Playground](https://cloydlau.github.io/demo/webgl-fluid.html)
 
 <br>
 
 ## Features
 
-- ESM & UMD
-- Configurable
-- 0 dependency, 21kb gziped
+- 0 dependency
 - Hover to activate by default, can also be Click
-- Support background image
+- Background image
 - Control whether to trigger multiple random splats initially
 
 <br>
 
-## Installation
+## Install
 
-![NPM](https://nodei.co/npm/webgl-fluid.png)
-
-<br>
-
-NPM
+### NPM
 
 ```ts
 import WebGLFluid from 'webgl-fluid'
@@ -35,13 +35,15 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-Without bundler / CDN
+### CDN
+
+#### Using the Global Build
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<canvas style="width: 100vw; height: 100vh;"/>
+<canvas style="width: 100vw; height: 100vh;" />
 <script src="https://unpkg.com/webgl-fluid@0.2"></script>
 <script>
 window['webgl-fluid'](document.querySelector('canvas'), {
@@ -52,15 +54,13 @@ window['webgl-fluid'](document.querySelector('canvas'), {
 </html>
 ```
 
-<br>
-
-Module Script
+#### Using the ES Module Build
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <body>
-<canvas style="width: 100vw; height: 100vh;"/>
+<canvas style="width: 100vw; height: 100vh;" />
 <script type="module">
 import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs'
 
@@ -133,12 +133,11 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Example for Vue 3
+## Vue 3 Example
 
 ```vue
-
 <template>
-  <canvas ref="canvas"/>
+  <canvas ref="canvas" />
 </template>
 
 <script setup>
@@ -162,12 +161,11 @@ canvas {
 
 <br>
 
-## Example for Vue 2
+## Vue 2 Example
 
 ```vue
-
 <template>
-  <canvas ref="canvas"/>
+  <canvas ref="canvas" />
 </template>
 
 <script>
@@ -187,3 +185,11 @@ canvas {
 }
 </style>
 ```
+
+<br>
+
+## Changelog
+
+Detailed changes for each release are documented in the [release notes](https://github.com/cloydlau/webgl-fluid/releases).
+
+<br>
