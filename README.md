@@ -110,7 +110,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Background image
+## Background Image
 
 CSS
 
@@ -172,7 +172,7 @@ canvas {
 import WebGLFluid from 'webgl-fluid'
 
 export default {
-  mounted () {
+  mounted() {
     WebGLFluid(this.$refs.canvas)
   }
 }
