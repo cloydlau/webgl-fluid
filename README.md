@@ -112,7 +112,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ## Background image
 
-css
+CSS
 
 ```css
 canvas {
@@ -123,7 +123,7 @@ canvas {
 }
 ```
 
-js
+JS
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
