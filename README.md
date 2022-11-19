@@ -2,6 +2,7 @@
 
 <p align="left">
   <a href="https://npmjs.com/package/webgl-fluid"><img src="https://img.shields.io/npm/v/webgl-fluid.svg" alt="npm package"></a>
+  <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img src="https://img.shields.io/badge/dependencies-0-darklime.svg" alt="dependencies"></a>
   <a href="https://npmjs.com/package/webgl-fluid"><img src="http://img.badgesize.io/https://unpkg.com/webgl-fluid/dist/webgl-fluid.umd.js?compression=gzip&label=gziped" alt="gziped"></a>
   <a href="https://npmjs.com/package/webgl-fluid"><img src="https://img.shields.io/npm/dt/webgl-fluid" alt="downloads"></a>
 </p>
@@ -14,7 +15,6 @@
 
 ## Features
 
-- 0 dependency
 - Hover to activate by default, can also be Click
 - Background image
 - Control whether to trigger multiple random splats initially
