@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "@cloydlau/scripts": "latest",
     "case-police": "latest",
     "eslint": "latest",
