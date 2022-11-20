@@ -11,7 +11,7 @@
     <img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid">
   </a>
   <a href="https://npmcharts.com/compare/webgl-fluid">
-    <img alt="downloads" src="https://img.shields.io/npm/dt/webgl-fluid">
+    <img alt="downloads" src="https://img.shields.io/npm/dt/webgl-fluid?color=black">
   </a>
 </p>
 
