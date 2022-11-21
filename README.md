@@ -1,11 +1,12 @@
-# webgl-fluid
+# WebGL Fluid <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
+
+[npm-version-svg]: https://versionbadg.es/cloydlau/webgl-fluid.svg
+[package-url]: https://npmjs.com/package/webgl-fluid
 
 <p align="left">
-  <a href="https://npmjs.com/package/webgl-fluid"><img alt="npm package" src="https://img.shields.io/npm/v/webgl-fluid.svg?logo=npm"></a>
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-bddd22.svg"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="downloads" src="https://img.shields.io/npm/dt/webgl-fluid"></a>
-  <br>
   <a href="https://eslint.org"><img alt="code style" src="https://img.shields.io/badge/code_style-eslint-4B32C3.svg"></a>
   <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-conventional-fe5196.svg"></a>
 </p>
