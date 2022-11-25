@@ -8,8 +8,7 @@
   "exports": {
     ".": {
       "require": "./dist/webgl-fluid.umd.js",
-      "import": "./dist/webgl-fluid.mjs",
-      "browser": "./dist/webgl-fluid.mjs"
+      "import": "./dist/webgl-fluid.mjs"
     },
     "./*": "./*"
   },
@@ -30,9 +29,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
+    "@cloydlau/scripts": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@cloydlau/scripts": "latest",
     "case-police": "latest",
     "eslint": "latest",
     "husky": "latest",
