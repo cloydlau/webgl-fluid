@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "pascalCasedName": "WebGLFluid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "vitepress": "latest"
   },
   "lint-staged": {
-    "!(demo/**/*)*.{js,ts,tsx,vue,md}": [
+    "{src,__tests__}/**.*": [
       "eslint --fix"
     ]
   },
