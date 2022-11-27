@@ -26,7 +26,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
-    "release": "npx case-police --fix && npx lint-staged && pnpm build && cl release"
+    "release": "npx case-police --ignore ./src --fix && npx lint-staged && pnpm build && cl release"
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
