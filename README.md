@@ -53,7 +53,7 @@ WebGLFluid(document.querySelector('canvas'), {
 <script type="importmap">
   {
     "imports": {
-      "webgl-fluid": "https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs"
+      "webgl-fluid": "https://unpkg.com/webgl-fluid@0.3/dist/webgl-fluid.mjs"
     }
   }
 </script>
@@ -75,7 +75,7 @@ WebGLFluid(document.querySelector('canvas'), {
 <html lang="en">
 <body>
 <canvas style="width: 100vw; height: 100vh;" />
-<script src="https://unpkg.com/webgl-fluid@0.2"></script>
+<script src="https://unpkg.com/webgl-fluid@0.3"></script>
 <script>
 WebGLFluid(document.querySelector('canvas'), {
   // options
@@ -97,11 +97,11 @@ WebGLFluid(document.querySelector('canvas'), {
   DYE_RESOLUTION: 1024,
   CAPTURE_RESOLUTION: 512,
   DENSITY_DISSIPATION: 1,
-  VELOCITY_DISSIPATION: 0.2,
+  VELOCITY_DISSIPATION: 0.3,
   PRESSURE: 0.8,
   PRESSURE_ITERATIONS: 20,
   CURL: 30,
-  SPLAT_RADIUS: 0.25,
+  SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
   SHADING: true,
   COLORFUL: true,

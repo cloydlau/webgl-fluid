@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "pascalCasedName": "WebGLFluid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
-    "release": "npx case-police --fix && npx lint-staged && vitest run && pnpm build && cl release"
+    "release": "npx case-police --fix && npx lint-staged && pnpm build && cl release"
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
