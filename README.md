@@ -39,7 +39,34 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
+<a name="CDN"></a>
+
 ### CDN
+
+#### Using the ESM Build
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<canvas style="width: 100vw; height: 100vh;" />
+<script type="importmap">
+  {
+    "imports": {
+      "webgl-fluid": "https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs"
+    }
+  }
+</script>
+<script type="module">
+import WebGLFluid from 'webgl-fluid'
+
+WebGLFluid(document.querySelector('canvas'), {
+  // options
+})
+</script>
+</body>
+</html>
+```
 
 #### Using the Global Build
 
@@ -50,25 +77,7 @@ WebGLFluid(document.querySelector('canvas'), {
 <canvas style="width: 100vw; height: 100vh;" />
 <script src="https://unpkg.com/webgl-fluid@0.2"></script>
 <script>
-window['webgl-fluid'](document.querySelector('canvas'), {
-  // options
-})
-</script>
-</body>
-</html>
-```
-
-#### Using the ES Module Build
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<canvas style="width: 100vw; height: 100vh;" />
-<script type="module">
-import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs'
-
-WebglFluid(document.querySelector('canvas'), {
+WebGLFluid(document.querySelector('canvas'), {
   // options
 })
 </script>

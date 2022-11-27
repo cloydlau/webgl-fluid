@@ -1,45 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
-</head>
-
 <body>
-  <canvas style="width: 100vw; height: 100vh;" />
-
-  <!-- <script src="/dist/webgl-fluid.umd.js"></script>
-  <script>
-    window['webgl-fluid'](document.querySelector('canvas'), {
-      // options
-    })
-  </script> -->
-
-  <!-- <script type="module">
-    import WebglFluid from '/dist/webgl-fluid.mjs'
-
-    WebglFluid(document.querySelector('canvas'), {
-      // options
-    })
-  </script> -->
-
-  <!-- <script src="https://unpkg.com/webgl-fluid@0.2"></script>
-  <script>
-    window['webgl-fluid'](document.querySelector('canvas'), {
-      // options
-    })
-  </script> -->
-
-  <script type="module">
-    import WebglFluid from 'https://unpkg.com/webgl-fluid@0.2/dist/webgl-fluid.mjs'
-
-    WebglFluid(document.querySelector('canvas'), {
-      // options
-    })
-  </script>
+<canvas style="width: 100vw; height: 100vh;" />
+<script src="./dist/webgl-fluid.umd.js"></script>
+<script>
+WebGLFluid(document.querySelector('canvas'), {
+  // options
+})
+</script>
 </body>
-
 </html>

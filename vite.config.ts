@@ -1,5 +1,5 @@
-import type { UserConfigExport, ConfigEnv } from 'vite'
-import { name } from './package.json'
+import type { ConfigEnv, UserConfigExport } from 'vite'
+import { name, pascalCasedName } from './package.json'
 
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
@@ -7,8 +7,15 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     build: {
       lib: {
         name,
-        entry: 'src/index.js'
+        entry: 'src/index.js',
       },
-    }
+      rollupOptions: {
+        output: {
+          globals: {
+            [name]: pascalCasedName,
+          },
+        },
+      },
+    },
   }
 }

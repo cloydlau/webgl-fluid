@@ -1,5 +1,6 @@
 {
   "name": "webgl-fluid",
+  "pascalCasedName": "WebGLFluid",
   "version": "0.2.0",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "latest",
-    "@cloydlau/scripts": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "case-police": "latest",
