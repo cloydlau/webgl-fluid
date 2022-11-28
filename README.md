@@ -41,9 +41,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <a name="CDN"></a>
 
-### CDN
-
-#### Using the ESM Build
+### CDN + ESM
 
 ```html
 <!DOCTYPE html>
@@ -68,7 +66,7 @@ WebGLFluid(document.querySelector('canvas'), {
 </html>
 ```
 
-#### Using the Global Build
+### CDN + UMD
 
 ```html
 <!DOCTYPE html>
