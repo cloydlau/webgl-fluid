@@ -9,6 +9,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         name,
         entry: 'src/index.js',
       },
+      sourcemap: true,
       rollupOptions: {
         output: {
           globals: {
