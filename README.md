@@ -128,7 +128,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ## Background Color
 
-Background color will be whitened by `13` on each RGB color values when `config.BLOOM` is `true`.
+Background color will be whitened by `13` on each RGB color values when `options.BLOOM` is `true`.
 Set it to `false` to get pure color.
 
 <br>
