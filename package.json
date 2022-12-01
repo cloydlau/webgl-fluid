@@ -31,23 +31,15 @@
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
-    "release": "npx case-police --ignore ./src --fix && npx lint-staged && pnpm build && cl release"
+    "release": "npx case-police --ignore ./src --fix && pnpm build && cl release"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "case-police": "latest",
-    "eslint": "latest",
     "husky": "latest",
-    "lint-staged": "latest",
     "vite": "latest",
     "vitepress": "latest"
-  },
-  "lint-staged": {
-    "{src,__tests__}/**.*": [
-      "eslint --fix"
-    ]
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

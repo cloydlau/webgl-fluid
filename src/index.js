@@ -22,7 +22,7 @@ SOFTWARE.
 
 import './dat.gui.min'
 
-function ga () {
+function ga() {
 
 }
 
@@ -61,7 +61,7 @@ export default function (el, config) {
     ...config,
   }
 
-  function pointerPrototype () {
+  function pointerPrototype() {
     this.id = -1
     this.texcoordX = 0
     this.texcoordY = 0
@@ -93,7 +93,7 @@ export default function (el, config) {
 
   // startGUI()
 
-  function getWebGLContext (canvas) {
+  function getWebGLContext(canvas) {
     const params = { alpha: true, depth: false, stencil: false, antialias: false, preserveDrawingBuffer: false }
 
     let gl = canvas.getContext('webgl2', params)
@@ -142,7 +142,7 @@ export default function (el, config) {
     }
   }
 
-  function getSupportedFormat (gl, internalFormat, format, type) {
+  function getSupportedFormat(gl, internalFormat, format, type) {
     if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
       switch (internalFormat) {
         case gl.R16F:
@@ -160,7 +160,7 @@ export default function (el, config) {
     }
   }
 
-  function supportRenderTextureFormat (gl, internalFormat, format, type) {
+  function supportRenderTextureFormat(gl, internalFormat, format, type) {
     let texture = gl.createTexture()
     gl.bindTexture(gl.TEXTURE_2D, texture)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
@@ -177,7 +177,7 @@ export default function (el, config) {
     return status == gl.FRAMEBUFFER_COMPLETE
   }
 
-  function startGUI () {
+  function startGUI() {
     var gui = new dat.GUI({ width: 300 })
     gui.add(config, 'DYE_RESOLUTION', {
       'high': 1024,
@@ -272,11 +272,11 @@ export default function (el, config) {
       gui.close()
   }
 
-  function isMobile () {
+  function isMobile() {
     return /Mobi|Android/i.test(navigator.userAgent)
   }
 
-  function captureScreenshot () {
+  function captureScreenshot() {
     let res = getResolution(config.CAPTURE_RESOLUTION)
     let target = createFBO(res.width, res.height, ext.formatRGBA.internalFormat, ext.formatRGBA.format, ext.halfFloatTexType, gl.NEAREST)
     render(target)
@@ -290,7 +290,7 @@ export default function (el, config) {
     URL.revokeObjectURL(datauri)
   }
 
-  function framebufferToTexture (target) {
+  function framebufferToTexture(target) {
     gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo)
     let length = target.width * target.height * 4
     let texture = new Float32Array(length)
@@ -298,7 +298,7 @@ export default function (el, config) {
     return texture
   }
 
-  function normalizeTexture (texture, width, height) {
+  function normalizeTexture(texture, width, height) {
     let result = new Uint8Array(texture.length)
     let id = 0
     for (let i = height - 1; i >= 0; i--) {
@@ -314,11 +314,11 @@ export default function (el, config) {
     return result
   }
 
-  function clamp01 (input) {
+  function clamp01(input) {
     return Math.min(Math.max(input, 0), 1)
   }
 
-  function textureToCanvas (texture, width, height) {
+  function textureToCanvas(texture, width, height) {
     let captureCanvas = document.createElement('canvas')
     let ctx = captureCanvas.getContext('2d')
     captureCanvas.width = width
@@ -331,7 +331,7 @@ export default function (el, config) {
     return captureCanvas
   }
 
-  function downloadURI (filename, uri) {
+  function downloadURI(filename, uri) {
     let link = document.createElement('a')
     link.download = filename
     link.href = uri
@@ -341,7 +341,7 @@ export default function (el, config) {
   }
 
   class Material {
-    constructor (vertexShader, fragmentShaderSource) {
+    constructor(vertexShader, fragmentShaderSource) {
       this.vertexShader = vertexShader
       this.fragmentShaderSource = fragmentShaderSource
       this.programs = []
@@ -349,7 +349,7 @@ export default function (el, config) {
       this.uniforms = []
     }
 
-    setKeywords (keywords) {
+    setKeywords(keywords) {
       let hash = 0
       for (let i = 0; i < keywords.length; i++)
         hash += hashCode(keywords[i])
@@ -367,24 +367,24 @@ export default function (el, config) {
       this.activeProgram = program
     }
 
-    bind () {
+    bind() {
       gl.useProgram(this.activeProgram)
     }
   }
 
   class Program {
-    constructor (vertexShader, fragmentShader) {
+    constructor(vertexShader, fragmentShader) {
       this.uniforms = {}
       this.program = createProgram(vertexShader, fragmentShader)
       this.uniforms = getUniforms(this.program)
     }
 
-    bind () {
+    bind() {
       gl.useProgram(this.program)
     }
   }
 
-  function createProgram (vertexShader, fragmentShader) {
+  function createProgram(vertexShader, fragmentShader) {
     let program = gl.createProgram()
     gl.attachShader(program, vertexShader)
     gl.attachShader(program, fragmentShader)
@@ -396,7 +396,7 @@ export default function (el, config) {
     return program
   }
 
-  function getUniforms (program) {
+  function getUniforms(program) {
     let uniforms = []
     let uniformCount = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS)
     for (let i = 0; i < uniformCount; i++) {
@@ -406,7 +406,7 @@ export default function (el, config) {
     return uniforms
   }
 
-  function compileShader (type, source, keywords) {
+  function compileShader(type, source, keywords) {
     source = addKeywords(source, keywords)
 
     const shader = gl.createShader(type)
@@ -419,7 +419,7 @@ export default function (el, config) {
     return shader
   }
 
-  function addKeywords (source, keywords) {
+  function addKeywords(source, keywords) {
     if (keywords == null) return source
     let keywordsString = ''
     keywords.forEach(keyword => {
@@ -895,7 +895,7 @@ export default function (el, config) {
 
   const displayMaterial = new Material(baseVertexShader, displayShaderSource)
 
-  function initFramebuffers () {
+  function initFramebuffers() {
     let simRes = getResolution(config.SIM_RESOLUTION)
     let dyeRes = getResolution(config.DYE_RESOLUTION)
 
@@ -923,7 +923,7 @@ export default function (el, config) {
     initSunraysFramebuffers()
   }
 
-  function initBloomFramebuffers () {
+  function initBloomFramebuffers() {
     let res = getResolution(config.BLOOM_RESOLUTION)
 
     const texType = ext.halfFloatTexType
@@ -944,7 +944,7 @@ export default function (el, config) {
     }
   }
 
-  function initSunraysFramebuffers () {
+  function initSunraysFramebuffers() {
     let res = getResolution(config.SUNRAYS_RESOLUTION)
 
     const texType = ext.halfFloatTexType
@@ -955,7 +955,7 @@ export default function (el, config) {
     sunraysTemp = createFBO(res.width, res.height, r.internalFormat, r.format, texType, filtering)
   }
 
-  function createFBO (w, h, internalFormat, format, type, param) {
+  function createFBO(w, h, internalFormat, format, type, param) {
     gl.activeTexture(gl.TEXTURE0)
     let texture = gl.createTexture()
     gl.bindTexture(gl.TEXTURE_2D, texture)
@@ -981,7 +981,7 @@ export default function (el, config) {
       height: h,
       texelSizeX,
       texelSizeY,
-      attach (id) {
+      attach(id) {
         gl.activeTexture(gl.TEXTURE0 + id)
         gl.bindTexture(gl.TEXTURE_2D, texture)
         return id
@@ -989,7 +989,7 @@ export default function (el, config) {
     }
   }
 
-  function createDoubleFBO (w, h, internalFormat, format, type, param) {
+  function createDoubleFBO(w, h, internalFormat, format, type, param) {
     let fbo1 = createFBO(w, h, internalFormat, format, type, param)
     let fbo2 = createFBO(w, h, internalFormat, format, type, param)
 
@@ -998,19 +998,19 @@ export default function (el, config) {
       height: h,
       texelSizeX: fbo1.texelSizeX,
       texelSizeY: fbo1.texelSizeY,
-      get read () {
+      get read() {
         return fbo1
       },
-      set read (value) {
+      set read(value) {
         fbo1 = value
       },
-      get write () {
+      get write() {
         return fbo2
       },
-      set write (value) {
+      set write(value) {
         fbo2 = value
       },
-      swap () {
+      swap() {
         let temp = fbo1
         fbo1 = fbo2
         fbo2 = temp
@@ -1018,7 +1018,7 @@ export default function (el, config) {
     }
   }
 
-  function resizeFBO (target, w, h, internalFormat, format, type, param) {
+  function resizeFBO(target, w, h, internalFormat, format, type, param) {
     let newFBO = createFBO(w, h, internalFormat, format, type, param)
     copyProgram.bind()
     gl.uniform1i(copyProgram.uniforms.uTexture, target.attach(0))
@@ -1026,7 +1026,7 @@ export default function (el, config) {
     return newFBO
   }
 
-  function resizeDoubleFBO (target, w, h, internalFormat, format, type, param) {
+  function resizeDoubleFBO(target, w, h, internalFormat, format, type, param) {
     if (target.width == w && target.height == h)
       return target
     target.read = resizeFBO(target.read, w, h, internalFormat, format, type, param)
@@ -1038,7 +1038,7 @@ export default function (el, config) {
     return target
   }
 
-  function createTextureAsync (url) {
+  function createTextureAsync(url) {
     let texture = gl.createTexture()
     gl.bindTexture(gl.TEXTURE_2D, texture)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
@@ -1051,7 +1051,7 @@ export default function (el, config) {
       texture,
       width: 1,
       height: 1,
-      attach (id) {
+      attach(id) {
         gl.activeTexture(gl.TEXTURE0 + id)
         gl.bindTexture(gl.TEXTURE_2D, texture)
         return id
@@ -1070,7 +1070,7 @@ export default function (el, config) {
     return obj
   }
 
-  function updateKeywords () {
+  function updateKeywords() {
     let displayKeywords = []
     if (config.SHADING) displayKeywords.push('SHADING')
     if (config.BLOOM) displayKeywords.push('BLOOM')
@@ -1086,7 +1086,7 @@ export default function (el, config) {
   let colorUpdateTimer = 0.0
   update()
 
-  function update () {
+  function update() {
     const dt = calcDeltaTime()
     if (resizeCanvas())
       initFramebuffers()
@@ -1098,7 +1098,7 @@ export default function (el, config) {
     requestAnimationFrame(update)
   }
 
-  function calcDeltaTime () {
+  function calcDeltaTime() {
     let now = Date.now()
     let dt = (now - lastUpdateTime) / 1000
     dt = Math.min(dt, 0.016666)
@@ -1106,7 +1106,7 @@ export default function (el, config) {
     return dt
   }
 
-  function resizeCanvas () {
+  function resizeCanvas() {
     let width = scaleByPixelRatio(canvas.clientWidth)
     let height = scaleByPixelRatio(canvas.clientHeight)
     if (canvas.width != width || canvas.height != height) {
@@ -1117,7 +1117,7 @@ export default function (el, config) {
     return false
   }
 
-  function updateColors (dt) {
+  function updateColors(dt) {
     if (!config.COLORFUL) return
 
     colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED
@@ -1129,7 +1129,7 @@ export default function (el, config) {
     }
   }
 
-  function applyInputs () {
+  function applyInputs() {
     if (splatStack.length > 0)
       multipleSplats(splatStack.pop())
 
@@ -1141,7 +1141,7 @@ export default function (el, config) {
     })
   }
 
-  function step (dt) {
+  function step(dt) {
     gl.disable(gl.BLEND)
     gl.viewport(0, 0, velocity.width, velocity.height)
 
@@ -1209,7 +1209,7 @@ export default function (el, config) {
     dye.swap()
   }
 
-  function render (target) {
+  function render(target) {
     if (config.BLOOM)
       applyBloom(dye.read, bloom)
     if (config.SUNRAYS) {
@@ -1236,19 +1236,19 @@ export default function (el, config) {
     drawDisplay(fbo, width, height)
   }
 
-  function drawColor (fbo, color) {
+  function drawColor(fbo, color) {
     colorProgram.bind()
     gl.uniform4f(colorProgram.uniforms.color, color.r, color.g, color.b, 1)
     blit(fbo)
   }
 
-  function drawCheckerboard (fbo) {
+  function drawCheckerboard(fbo) {
     checkerboardProgram.bind()
     gl.uniform1f(checkerboardProgram.uniforms.aspectRatio, canvas.width / canvas.height)
     blit(fbo)
   }
 
-  function drawDisplay (fbo, width, height) {
+  function drawDisplay(fbo, width, height) {
     displayMaterial.bind()
     if (config.SHADING)
       gl.uniform2f(displayMaterial.uniforms.texelSize, 1.0 / width, 1.0 / height)
@@ -1264,7 +1264,7 @@ export default function (el, config) {
     blit(fbo)
   }
 
-  function applyBloom (source, destination) {
+  function applyBloom(source, destination) {
     if (bloomFramebuffers.length < 2)
       return
 
@@ -1313,7 +1313,7 @@ export default function (el, config) {
     blit(destination.fbo)
   }
 
-  function applySunrays (source, mask, destination) {
+  function applySunrays(source, mask, destination) {
     gl.disable(gl.BLEND)
     sunraysMaskProgram.bind()
     gl.uniform1i(sunraysMaskProgram.uniforms.uTexture, source.attach(0))
@@ -1327,7 +1327,7 @@ export default function (el, config) {
     blit(destination.fbo)
   }
 
-  function blur (target, temp, iterations) {
+  function blur(target, temp, iterations) {
     blurProgram.bind()
     for (let i = 0; i < iterations; i++) {
       gl.uniform2f(blurProgram.uniforms.texelSize, target.texelSizeX, 0.0)
@@ -1340,13 +1340,13 @@ export default function (el, config) {
     }
   }
 
-  function splatPointer (pointer) {
+  function splatPointer(pointer) {
     let dx = pointer.deltaX * config.SPLAT_FORCE
     let dy = pointer.deltaY * config.SPLAT_FORCE
     splat(pointer.texcoordX, pointer.texcoordY, dx, dy, pointer.color)
   }
 
-  function multipleSplats (amount) {
+  function multipleSplats(amount) {
     for (let i = 0; i < amount; i++) {
       const color = generateColor()
       color.r *= 10.0
@@ -1360,7 +1360,7 @@ export default function (el, config) {
     }
   }
 
-  function splat (x, y, dx, dy, color) {
+  function splat(x, y, dx, dy, color) {
     gl.viewport(0, 0, velocity.width, velocity.height)
     splatProgram.bind()
     gl.uniform1i(splatProgram.uniforms.uTarget, velocity.read.attach(0))
@@ -1378,7 +1378,7 @@ export default function (el, config) {
     dye.swap()
   }
 
-  function correctRadius (radius) {
+  function correctRadius(radius) {
     let aspectRatio = canvas.width / canvas.height
     if (aspectRatio > 1)
       radius *= aspectRatio
@@ -1443,7 +1443,7 @@ export default function (el, config) {
       splatStack.push(parseInt(Math.random() * 20) + 5)
   })
 
-  function updatePointerDownData (pointer, id, posX, posY) {
+  function updatePointerDownData(pointer, id, posX, posY) {
     pointer.id = id
     pointer.down = true
     pointer.moved = false
@@ -1456,7 +1456,7 @@ export default function (el, config) {
     pointer.color = generateColor()
   }
 
-  function updatePointerMoveData (pointer, posX, posY) {
+  function updatePointerMoveData(pointer, posX, posY) {
     if (config.TRIGGER === 'click') {
       pointer.moved = pointer.down
     }
@@ -1471,23 +1471,23 @@ export default function (el, config) {
     }
   }
 
-  function updatePointerUpData (pointer) {
+  function updatePointerUpData(pointer) {
     pointer.down = false
   }
 
-  function correctDeltaX (delta) {
+  function correctDeltaX(delta) {
     let aspectRatio = canvas.width / canvas.height
     if (aspectRatio < 1) delta *= aspectRatio
     return delta
   }
 
-  function correctDeltaY (delta) {
+  function correctDeltaY(delta) {
     let aspectRatio = canvas.width / canvas.height
     if (aspectRatio > 1) delta /= aspectRatio
     return delta
   }
 
-  function generateColor () {
+  function generateColor() {
     let c = HSVtoRGB(Math.random(), 1.0, 1.0)
     c.r *= 0.15
     c.g *= 0.15
@@ -1495,7 +1495,7 @@ export default function (el, config) {
     return c
   }
 
-  function HSVtoRGB (h, s, v) {
+  function HSVtoRGB(h, s, v) {
     let r, g, b, i, f, p, q, t
     i = Math.floor(h * 6)
     f = h * 6 - i
@@ -1531,7 +1531,7 @@ export default function (el, config) {
     }
   }
 
-  function normalizeColor (input) {
+  function normalizeColor(input) {
     let output = {
       r: input.r / 255,
       g: input.g / 255,
@@ -1540,13 +1540,13 @@ export default function (el, config) {
     return output
   }
 
-  function wrap (value, min, max) {
+  function wrap(value, min, max) {
     let range = max - min
     if (range == 0) return min
     return (value - min) % range + min
   }
 
-  function getResolution (resolution) {
+  function getResolution(resolution) {
     let aspectRatio = gl.drawingBufferWidth / gl.drawingBufferHeight
     if (aspectRatio < 1)
       aspectRatio = 1.0 / aspectRatio
@@ -1560,19 +1560,19 @@ export default function (el, config) {
       return { width: min, height: max }
   }
 
-  function getTextureScale (texture, width, height) {
+  function getTextureScale(texture, width, height) {
     return {
       x: width / texture.width,
       y: height / texture.height
     }
   }
 
-  function scaleByPixelRatio (input) {
+  function scaleByPixelRatio(input) {
     let pixelRatio = window.devicePixelRatio || 1
     return Math.floor(input * pixelRatio)
   }
 
-  function hashCode (s) {
+  function hashCode(s) {
     if (s.length == 0) return 0
     let hash = 0
     for (let i = 0; i < s.length; i++) {

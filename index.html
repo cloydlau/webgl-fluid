@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
-<canvas style="width: 100vw; height: 100vh;" />
-<script src="./dist/webgl-fluid.umd.js"></script>
-<script>
-WebGLFluid(document.querySelector('canvas'), {
-  // options
-})
-</script>
+  <canvas style="width: 100vw; height: 100vh; background: rgb(0, 0, 0);" />
+  <script type="importmap">
+    {
+      "imports": {
+        "webgl-fluid": "./dist/webgl-fluid.mjs"
+      }
+    }
+  </script>
+  <script type="module">
+    import WebGLFluid from 'webgl-fluid'
+
+    WebGLFluid(document.querySelector('canvas'), {
+      TRANSPARENT: true,
+      IMMEDIATE: false,
+      TRIGGER: 'click',
+    })
+  </script>
 </body>
+
 </html>

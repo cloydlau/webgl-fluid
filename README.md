@@ -7,7 +7,6 @@
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-green.svg"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="downloads" src="https://img.shields.io/npm/dt/webgl-fluid"></a>
-  <a href="https://eslint.org"><img alt="code style" src="https://img.shields.io/badge/code_style-ESLint-4B32C3.svg?logo=eslint"></a>
   <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits&logoColor=white"></a>
 </p>
 
@@ -29,12 +28,8 @@
 
 ### NPM
 
-```ts
-import WebGLFluid from 'webgl-fluid'
-
-WebGLFluid(document.querySelector('canvas'), {
-  // options
-})
+```sh
+npm add webgl-fluid
 ```
 
 <a name="CDN"></a>
@@ -44,23 +39,29 @@ WebGLFluid(document.querySelector('canvas'), {
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
 <body>
-<canvas style="width: 100vw; height: 100vh;" />
-<script type="importmap">
+  <canvas style="width: 100vw; height: 100vh;" />
+  <script type="importmap">
   {
     "imports": {
       "webgl-fluid": "https://unpkg.com/webgl-fluid@0.3/dist/webgl-fluid.mjs"
     }
   }
 </script>
-<script type="module">
-import WebGLFluid from 'webgl-fluid'
+  <script type="module">
+    import WebGLFluid from 'webgl-fluid'
 
-WebGLFluid(document.querySelector('canvas'), {
-  // options
-})
-</script>
+    WebGLFluid(document.querySelector('canvas'), {
+      // options
+    })
+  </script>
 </body>
+
 </html>
 ```
 
@@ -69,15 +70,21 @@ WebGLFluid(document.querySelector('canvas'), {
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
 <body>
-<canvas style="width: 100vw; height: 100vh;" />
-<script src="https://unpkg.com/webgl-fluid@0.3"></script>
-<script>
-WebGLFluid(document.querySelector('canvas'), {
-  // options
-})
-</script>
+  <canvas style="width: 100vw; height: 100vh;" />
+  <script src="https://unpkg.com/webgl-fluid@0.3"></script>
+  <script>
+    WebGLFluid(document.querySelector('canvas'), {
+      // options
+    })
+  </script>
 </body>
+
 </html>
 ```
 
@@ -125,10 +132,10 @@ CSS
 
 ```css
 canvas {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("xxx.png");
-    background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("xxx.png");
+  background-size: 100% 100%;
 }
 ```
 
@@ -146,7 +153,33 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ### Vanilla
 
-See [CDN](#CDN).
+```html
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <canvas style="width: 100vw; height: 100vh;" />
+  <script src="src/index.js"></script>
+</body>
+
+</html>
+```
+
+```ts
+// src/index.js
+
+import WebGLFluid from 'webgl-fluid'
+
+WebGLFluid(document.querySelector('canvas'), {
+  // options
+})
+```
 
 ### Vue 3
 
