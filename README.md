@@ -47,12 +47,12 @@ npm add webgl-fluid
 <body>
   <canvas style="width: 100vw; height: 100vh;" />
   <script type="importmap">
-  {
-    "imports": {
-      "webgl-fluid": "https://unpkg.com/webgl-fluid@0.3/dist/webgl-fluid.mjs"
+    {
+      "imports": {
+        "webgl-fluid": "https://unpkg.com/webgl-fluid@0.3/dist/webgl-fluid.mjs"
+      }
     }
-  }
-</script>
+  </script>
   <script type="module">
     import WebGLFluid from 'webgl-fluid'
 
