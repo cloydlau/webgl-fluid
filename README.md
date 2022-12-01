@@ -37,8 +37,6 @@ WebGLFluid(document.querySelector('canvas'), {
 })
 ```
 
-<br>
-
 <a name="CDN"></a>
 
 ### CDN + ESM
