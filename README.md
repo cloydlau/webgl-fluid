@@ -148,8 +148,6 @@ WebGLFluid(document.querySelector('canvas'), {
 
 See [CDN](#CDN).
 
-<br>
-
 ### Vue 3
 
 ```vue
@@ -175,8 +173,6 @@ canvas {
 }
 </style>
 ```
-
-<br>
 
 ### Vue 2
 
