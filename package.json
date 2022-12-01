@@ -6,6 +6,11 @@
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "license": "MIT",
   "repository": "https://github.com/cloydlau/webgl-fluid",
+  "keywords": [
+    "webgl",
+    "fluid",
+    "background"
+  ],
   "exports": {
     ".": {
       "require": "./dist/webgl-fluid.umd.js",
