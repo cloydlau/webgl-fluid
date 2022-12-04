@@ -28,7 +28,7 @@
 
 ### NPM
 
-```sh
+```shell
 npm add webgl-fluid
 ```
 
