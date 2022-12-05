@@ -1,18 +1,21 @@
-# WebGL Fluid <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
+<h1 align="center">
+  <a href="https://npmjs.com/package/webgl-fluid" target="_blank" rel="noopener noreferrer">
+    WebGL Fluid <sup><img alt="version" src="https://versionbadg.es/cloydlau/webgl-fluid.svg"></sup>
+  </a>
+</h1>
 
-[npm-version-svg]: https://versionbadg.es/cloydlau/webgl-fluid.svg
-[package-url]: https://npmjs.com/package/webgl-fluid
+<p align="center">
+  ES Module support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>
+  <br>
+  🕹 <a href="https://cloydlau.github.io/demo/webgl-fluid.html">Playground</a>
+</p>
 
-<p align="left">
+<p align="center">
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://img.shields.io/badge/dependencies-0-green.svg"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="downloads" src="https://img.shields.io/npm/dt/webgl-fluid"></a>
   <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits&logoColor=white"></a>
 </p>
-
-> ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.
-
-🕹 [Online Playground](https://cloydlau.github.io/demo/webgl-fluid.html)
 
 <br>
 
