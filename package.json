@@ -1,6 +1,6 @@
 {
   "name": "webgl-fluid",
-  "pascalCasedName": "WebGLFluid",
+  "PascalCasedName": "WebGLFluid",
   "version": "0.3.2",
   "private": false,
   "packageManager": "pnpm@7.18.2",
