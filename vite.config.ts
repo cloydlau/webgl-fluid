@@ -1,5 +1,5 @@
 import type { ConfigEnv, UserConfigExport } from 'vite'
-import { name, pascalCasedName } from './package.json'
+import { name, PascalCasedName } from './package.json'
 
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
@@ -13,7 +13,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       rollupOptions: {
         output: {
           globals: {
-            [name]: pascalCasedName,
+            [name]: PascalCasedName,
           },
         },
       },

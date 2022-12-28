@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  ES Module support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>
+  ES Module support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>.
   <br>
   🕹 <a href="https://cloydlau.github.io/demo/webgl-fluid.html">Playground</a>
 </p>
