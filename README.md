@@ -32,7 +32,7 @@
 ### NPM
 
 ```shell
-npm add webgl-fluid
+npm i webgl-fluid
 ```
 
 <a name="CDN"></a>
