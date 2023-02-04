@@ -68,7 +68,7 @@ npm i webgl-fluid
 </html>
 ```
 
-### CDN + UMD
+### CDN + IIFE
 
 ```html
 <!DOCTYPE html>
