@@ -5,6 +5,7 @@
   "private": false,
   "packageManager": "pnpm@7.18.2",
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
+  "author": "Cloyd Lau",
   "license": "MIT",
   "repository": "https://github.com/cloydlau/webgl-fluid",
   "keywords": [
