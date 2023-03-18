@@ -52,7 +52,7 @@ npm i webgl-fluid
   <script type="importmap">
     {
       "imports": {
-        "webgl-fluid": "https://unpkg.com/webgl-fluid@0.3/dist/webgl-fluid.mjs"
+        "webgl-fluid": "https://cdn.jsdelivr.net/npm/webgl-fluid@0.3/dist/webgl-fluid.mjs"
       }
     }
   </script>
@@ -80,7 +80,7 @@ npm i webgl-fluid
 
 <body>
   <canvas style="width: 100vw; height: 100vh;" />
-  <script src="https://unpkg.com/webgl-fluid@0.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/webgl-fluid@0.3"></script>
   <script>
     WebGLFluid(document.querySelector('canvas'), {
       // options
