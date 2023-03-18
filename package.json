@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "PascalCasedName": "WebGLFluid",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "packageManager": "pnpm@7.29.3",
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
