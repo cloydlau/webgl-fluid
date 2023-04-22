@@ -1,5 +1,5 @@
 import type { ConfigEnv, UserConfigExport } from 'vite'
-import { name, PascalCasedName } from './package.json'
+import { PascalCasedName, name } from './package.json'
 
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {

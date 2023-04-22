@@ -3,7 +3,6 @@
   "PascalCasedName": "WebGLFluid",
   "version": "0.3.3",
   "private": false,
-  "packageManager": "pnpm@7.29.3",
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "author": "Cloyd Lau",
   "license": "MIT",
@@ -33,15 +32,19 @@
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
-    "release": "npx case-police --ignore ./src --fix && pnpm build && cl release"
+    "release": "npx lint-staged && pnpm build && cl release"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "case-police": "latest",
     "husky": "latest",
+    "lint-staged": "latest",
     "vite": "latest",
     "vitepress": "latest"
+  },
+  "lint-staged": {
+    "*.md": "case-police --fix"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
