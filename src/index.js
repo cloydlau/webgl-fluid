@@ -43,6 +43,7 @@ export default function (el, config) {
     CURL: 30,
     SPLAT_RADIUS: 0.25,
     SPLAT_FORCE: 6000,
+    SPLAT_COUNT: parseInt(Math.random() * 20) + 5,
     SHADING: true,
     COLORFUL: true,
     COLOR_UPDATE_SPEED: 10,
@@ -1080,7 +1081,7 @@ export default function (el, config) {
 
   updateKeywords()
   initFramebuffers()
-  config.IMMEDIATE && multipleSplats(parseInt(Math.random() * 20) + 5)
+  config.IMMEDIATE && multipleSplats(config.SPLAT_COUNT)
 
   let lastUpdateTime = Date.now()
   let colorUpdateTimer = 0.0

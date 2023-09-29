@@ -17,8 +17,8 @@
   ],
   "exports": {
     ".": {
-      "require": "./dist/webgl-fluid.umd.js",
-      "import": "./dist/webgl-fluid.mjs"
+      "import": "./dist/webgl-fluid.mjs",
+      "require": "./dist/webgl-fluid.umd.js"
     },
     "./*": "./*"
   },
@@ -31,25 +31,32 @@
     "docs"
   ],
   "scripts": {
-    "dev": "vite --open",
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
-    "release": "npx lint-staged && pnpm build && cl release"
+    "release": "esno ./scripts/release.mts",
+    "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx only-allow pnpm",
+    "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx simple-git-hooks"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "case-police": "latest",
+    "cross-spawn": "latest",
+    "del": "latest",
     "husky": "latest",
+    "kolorist": "latest",
     "lint-staged": "latest",
+    "prompts": "latest",
+    "semver": "latest",
+    "simple-git-hooks": "latest",
     "vite": "latest",
     "vitepress": "latest"
   },
+  "simple-git-hooks": {
+    "commit-msg": "npx --no -- commitlint --edit ${1}"
+  },
   "lint-staged": {
     "*.md": "case-police --fix"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   }
 }

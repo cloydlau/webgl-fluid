@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://npmjs.com/package/webgl-fluid" target="_blank" rel="noopener noreferrer">
-    WebGL Fluid <sup><img alt="version" src="https://versionbadg.es/cloydlau/webgl-fluid.svg"></sup>
+    WebGL Fluid <sup><img alt="version" src="https://img.shields.io/npm/v/webgl-fluid.svg?style=flat-square&color=white&label="></sup>
   </a>
 </h1>
 
@@ -24,6 +24,7 @@
 - Hover to activate by default, can also be Click
 - Background image
 - Control whether to trigger multiple random splats initially
+- Control initial splats count
 
 <br>
 
@@ -109,6 +110,7 @@ WebGLFluid(document.querySelector('canvas'), {
   CURL: 30,
   SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
+  SPLAT_COUNT: parseInt(Math.random() * 20) + 5, // Initial splats count (when IMMEDIATE is set to true)
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
