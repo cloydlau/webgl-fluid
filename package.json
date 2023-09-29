@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "PascalCasedName": "WebGLFluid",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "author": "Cloyd Lau",
@@ -44,6 +44,7 @@
     "case-police": "latest",
     "cross-spawn": "latest",
     "del": "latest",
+    "esno": "latest",
     "husky": "latest",
     "kolorist": "latest",
     "lint-staged": "latest",
