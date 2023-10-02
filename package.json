@@ -4,7 +4,7 @@
   "version": "0.3.4",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
-  "author": "Cloyd Lau",
+  "author": "Cloyd Lau (https://github.com/cloydlau)",
   "license": "MIT",
   "repository": "https://github.com/cloydlau/webgl-fluid",
   "keywords": [
@@ -48,6 +48,7 @@
     "husky": "latest",
     "kolorist": "latest",
     "lint-staged": "latest",
+    "open": "latest",
     "prompts": "latest",
     "semver": "latest",
     "simple-git-hooks": "latest",
