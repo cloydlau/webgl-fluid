@@ -35,7 +35,7 @@
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
     "release": "esno ./scripts/release.mts",
-    "pnpm:devPreinstall": "esno ./scripts/devPreinstall.mts",
+    "pnpm:devPreinstall": "node ./scripts/devPreinstall.js",
     "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx only-allow pnpm",
     "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx simple-git-hooks"
   },
