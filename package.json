@@ -34,6 +34,7 @@
     "docs"
   ],
   "scripts": {
+    "up": "nu -L !@antfu/eslint-config && ni",
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
@@ -54,10 +55,11 @@
     "only-allow": "latest",
     "open": "latest",
     "prompts": "latest",
+    "rollup-plugin-visualizer": "latest",
     "semver": "latest",
     "simple-git-hooks": "latest",
     "vite": "latest",
-    "vitepress": "latest"
+    "vitepress": "1.0.0-rc.25"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no -- commitlint --edit ${1}"
