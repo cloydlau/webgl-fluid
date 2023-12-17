@@ -163,7 +163,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ## Example
 
-### Vanilla
+### Vanilla JS
 
 ```html
 <!-- index.html -->
