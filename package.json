@@ -34,7 +34,8 @@
     "docs"
   ],
   "scripts": {
-    "up": "nu -L !@antfu/eslint-config && ni",
+    "dev": "pnpm build && vite",
+    "up": "nu -L !@antfu/eslint-config !vite && ni",
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
@@ -58,7 +59,7 @@
     "rollup-plugin-visualizer": "latest",
     "semver": "latest",
     "simple-git-hooks": "latest",
-    "vite": "latest",
+    "vite": "~4.5.1",
     "vitepress": "1.0.0-rc.32"
   },
   "simple-git-hooks": {
