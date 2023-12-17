@@ -6,50 +6,50 @@ settings:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: ^18.4.3
+    specifier: latest
     version: 18.4.3(typescript@5.3.3)
   '@commitlint/config-conventional':
-    specifier: ^18.4.3
+    specifier: latest
     version: 18.4.3
   case-police:
-    specifier: ^0.6.1
+    specifier: latest
     version: 0.6.1
   cross-spawn:
-    specifier: ^7.0.3
+    specifier: latest
     version: 7.0.3
   del:
-    specifier: ^7.1.0
+    specifier: latest
     version: 7.1.0
   esno:
-    specifier: ^4.0.0
+    specifier: latest
     version: 4.0.0
   kolorist:
-    specifier: ^1.8.0
+    specifier: latest
     version: 1.8.0
   lint-staged:
-    specifier: ^15.2.0
+    specifier: latest
     version: 15.2.0
   only-allow:
-    specifier: ^1.2.1
+    specifier: latest
     version: 1.2.1
   open:
-    specifier: ^9.1.0
+    specifier: latest
     version: 9.1.0
   prompts:
-    specifier: ^2.4.2
+    specifier: latest
     version: 2.4.2
   rollup-plugin-visualizer:
-    specifier: ^5.11.0
+    specifier: latest
     version: 5.11.0
   semver:
-    specifier: ^7.5.4
+    specifier: latest
     version: 7.5.4
   simple-git-hooks:
-    specifier: ^2.9.0
+    specifier: latest
     version: 2.9.0
   vite:
-    specifier: ^5.0.10
-    version: 5.0.10(@types/node@18.19.3)
+    specifier: ~4.5.1
+    version: 4.5.1(@types/node@18.19.3)
   vitepress:
     specifier: 1.0.0-rc.32
     version: 1.0.0-rc.32(@algolia/client-search@4.22.0)(@types/node@18.19.3)(search-insights@2.13.0)(typescript@5.3.3)
@@ -2878,6 +2878,14 @@ packages:
       yargs: 17.7.2
     dev: true
 
+  /rollup@3.29.4:
+    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
   /rollup@4.9.1:
     resolution: {integrity: sha512-pgPO9DWzLoW/vIhlSoDByCzcpX92bKEorbgXuZrqxByte3JFk2xSW2JEeAcyLc9Ru9pqcNNW+Ob7ntsk2oT/Xw==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -3296,6 +3304,42 @@ packages:
       '@types/unist': 3.0.2
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
+    dev: true
+
+  /vite@4.5.1(@types/node@18.19.3):
+    resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 18.19.3
+      esbuild: 0.18.20
+      postcss: 8.4.32
+      rollup: 3.29.4
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: true
 
   /vite@5.0.10(@types/node@18.19.3):
