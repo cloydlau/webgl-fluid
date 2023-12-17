@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "PascalCasedName": "WebGLFluid",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "private": false,
   "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "author": {
@@ -34,7 +34,6 @@
     "docs"
   ],
   "scripts": {
-    "dev": "pnpm build && vite",
     "up": "nu -L !@antfu/eslint-config !vite && ni",
     "build": "vite build",
     "serve": "vite preview",
