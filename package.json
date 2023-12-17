@@ -59,7 +59,7 @@
     "semver": "latest",
     "simple-git-hooks": "latest",
     "vite": "latest",
-    "vitepress": "1.0.0-rc.25"
+    "vitepress": "1.0.0-rc.32"
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no -- commitlint --edit ${1}"
