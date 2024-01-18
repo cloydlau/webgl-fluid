@@ -41,54 +41,50 @@ npm i webgl-fluid
 ### CDN + ESM
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-  <canvas style="width: 100vw; height: 100vh;" />
-  <script type="importmap">
-    {
-      "imports": {
-        "webgl-fluid": "https://cdn.jsdelivr.net/npm/webgl-fluid@0.3/dist/webgl-fluid.mjs"
+  <body>
+    <canvas style="width: 100vw; height: 100vh" />
+    <script type="importmap">
+      {
+        "imports": {
+          "webgl-fluid": "https://cdn.jsdelivr.net/npm/webgl-fluid@0.3/dist/webgl-fluid.mjs"
+        }
       }
-    }
-  </script>
-  <script type="module">
-    import WebGLFluid from 'webgl-fluid'
+    </script>
+    <script type="module">
+      import WebGLFluid from 'webgl-fluid'
 
-    WebGLFluid(document.querySelector('canvas'), {
-      // options
-    })
-  </script>
-</body>
-
+      WebGLFluid(document.querySelector('canvas'), {
+        // options
+      })
+    </script>
+  </body>
 </html>
 ```
 
 ### CDN + IIFE
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-  <canvas style="width: 100vw; height: 100vh;" />
-  <script src="https://cdn.jsdelivr.net/npm/webgl-fluid@0.3"></script>
-  <script>
-    WebGLFluid(document.querySelector('canvas'), {
-      // options
-    })
-  </script>
-</body>
-
+  <body>
+    <canvas style="width: 100vw; height: 100vh" />
+    <script src="https://cdn.jsdelivr.net/npm/webgl-fluid@0.3"></script>
+    <script>
+      WebGLFluid(document.querySelector('canvas'), {
+        // options
+      })
+    </script>
+  </body>
 </html>
 ```
 
@@ -110,7 +106,7 @@ WebGLFluid(document.querySelector('canvas'), {
   CURL: 30,
   SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
-  SPLAT_COUNT: parseInt(Math.random() * 20) + 5, // Initial splats count (when IMMEDIATE is set to true)
+  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial splats count (when IMMEDIATE is set to true)
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
@@ -146,7 +142,7 @@ CSS
 canvas {
   width: 100vw;
   height: 100vh;
-  background-image: url("xxx.png");
+  background-image: url('xxx.png');
   background-size: 100% 100%;
 }
 ```
@@ -168,18 +164,16 @@ WebGLFluid(document.querySelector('canvas'), {
 ```html
 <!-- index.html -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-</head>
-
-<body>
-  <canvas style="width: 100vw; height: 100vh;" />
-  <script src="src/index.js"></script>
-</body>
-
+  <body>
+    <canvas style="width: 100vw; height: 100vh" />
+    <script src="src/index.js"></script>
+  </body>
 </html>
 ```
 
@@ -196,10 +190,6 @@ WebGLFluid(document.querySelector('canvas'), {
 ### Vue 3
 
 ```vue
-<template>
-  <canvas ref="canvas" />
-</template>
-
 <script setup>
 import { onMounted, ref } from 'vue'
 import WebGLFluid from 'webgl-fluid'
@@ -210,6 +200,10 @@ onMounted(() => {
   WebGLFluid(canvas.value)
 })
 </script>
+
+<template>
+  <canvas ref="canvas" />
+</template>
 
 <style>
 canvas {
@@ -222,10 +216,6 @@ canvas {
 ### Vue 2
 
 ```vue
-<template>
-  <canvas ref="canvas" />
-</template>
-
 <script>
 import WebGLFluid from 'webgl-fluid'
 
@@ -235,6 +225,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <canvas ref="canvas" />
+</template>
 
 <style>
 canvas {

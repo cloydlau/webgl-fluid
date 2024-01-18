@@ -34,21 +34,26 @@
     "docs"
   ],
   "scripts": {
-    "up": "nu -L !@antfu/eslint-config !vite && ni",
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
     "release": "esno ./scripts/release.mts",
+    "lint": "eslint \"**/*.{vue,js,ts,mjs,mts,jsx,tsx,md,json}\"",
+    "lint:fix": "eslint \"**/*.{vue,js,ts,mjs,mts,jsx,tsx,md,json}\" --fix",
     "pnpm:devPreinstall": "node ./scripts/devPreinstall.mjs",
     "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx only-allow pnpm",
     "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx simple-git-hooks"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "case-police": "latest",
     "cross-spawn": "latest",
     "del": "latest",
+    "eslint": "npm:eslint-ts-patch@latest",
+    "eslint-plugin-format": "latest",
+    "eslint-ts-patch": "latest",
     "esno": "latest",
     "kolorist": "latest",
     "lint-staged": "latest",
@@ -58,13 +63,15 @@
     "rollup-plugin-visualizer": "latest",
     "semver": "latest",
     "simple-git-hooks": "latest",
-    "vite": "~4.5.1",
-    "vitepress": "1.0.0-rc.32"
+    "vite": "4",
+    "vitepress": "latest"
   },
   "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
     "commit-msg": "npx --no -- commitlint --edit ${1}"
   },
   "lint-staged": {
-    "*.md": "case-police --fix"
+    "*.md": "case-police --fix",
+    "*.{vue,js,ts,mjs,mts,jsx,tsx,md,json}": "eslint --cache --fix"
   }
 }
