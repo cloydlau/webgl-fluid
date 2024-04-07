@@ -38,8 +38,8 @@
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
     "release": "esno ./scripts/release.mts",
-    "lint": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md}\"",
-    "lint:fix": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md}\" --fix",
+    "lint": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\" --ignore-pattern stats.html",
+    "lint:fix": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\" --ignore-pattern stats.html --fix",
     "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx only-allow pnpm",
     "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx simple-git-hooks"
   },
@@ -71,6 +71,6 @@
   },
   "lint-staged": {
     "*.md": "case-police --fix",
-    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md}": "eslint --cache --fix"
+    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}": "eslint --ignore-pattern stats.html --cache --fix"
   }
 }
