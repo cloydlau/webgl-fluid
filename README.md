@@ -6,11 +6,10 @@
 
 <p align="center">
   ES Module support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>.
-  <br>
-  🕹 <a href="https://cloydlau.github.io/demo/webgl-fluid.html">Playground</a>
 </p>
 
 <p align="center">
+  <a href="https://cloydlau.github.io/demo/webgl-fluid.html"><img alt="playground" src="https://img.shields.io/badge/Playground-blue?color=9BE4E0"></a>
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://badgen.net/bundlephobia/dependency-count/webgl-fluid"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="npm downloads" src="https://img.shields.io/npm/dt/webgl-fluid?logo=npm&color=rgba(203,0,0,0.9)"></a>
@@ -21,10 +20,10 @@
 
 ## Features
 
-- Hover to activate by default, can also be Click
+- Hover to activate by default, can also be click
+- Control whether to trigger multiple random splats initially and automatically (at intervals)
+- Set the splats' count
 - Background image
-- Control whether to trigger multiple random splats initially
-- Control initial splats count
 
 <br>
 
@@ -94,8 +93,9 @@ npm i webgl-fluid
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
-  IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
-  TRIGGER: 'hover', // Can be change to 'click'
+  TRIGGER: 'hover',
+  IMMEDIATE: true,
+  INTERVAL: 0,
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1024,
   CAPTURE_RESOLUTION: 512,
@@ -106,7 +106,7 @@ WebGLFluid(document.querySelector('canvas'), {
   CURL: 30,
   SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
-  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial splats count (when IMMEDIATE is set to true)
+  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial or automatic splats' count
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
@@ -127,10 +127,43 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Background Color
+## Hover to Activate
 
-Background color will be whitened by `13` on each RGB color values when `options.BLOOM` is `true`.
-Set it to `false` to get pure color.
+```ts
+WebGLFluid(document.querySelector('canvas'), {
+  TRIGGER: 'hover', // Can be change to 'click'
+})
+```
+
+<br>
+
+## Auto Splating at Initialization
+
+```ts
+WebGLFluid(document.querySelector('canvas'), {
+  IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
+})
+```
+
+<br>
+
+## Auto Splating at Intervals
+
+```ts
+WebGLFluid(document.querySelector('canvas'), {
+  INTERVAL: 3000, // The time (in milliseconds) the timer should delay in between auto-splating
+})
+```
+
+<br>
+
+## Set the Splats' Count
+
+```ts
+WebGLFluid(document.querySelector('canvas'), {
+  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial or automatic splats' count
+})
+```
 
 <br>
 
@@ -154,6 +187,13 @@ WebGLFluid(document.querySelector('canvas'), {
   TRANSPARENT: true
 })
 ```
+
+<br>
+
+## Background Color
+
+Background color will be whitened by `13` on each RGB color values when `options.BLOOM` is `true`.
+Set it to `false` to get pure color.
 
 <br>
 
