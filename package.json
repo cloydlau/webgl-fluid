@@ -1,7 +1,7 @@
 {
   "name": "webgl-fluid",
   "PascalCasedName": "WebGLFluid",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "private": false,
   "description": "ESM support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "author": {
