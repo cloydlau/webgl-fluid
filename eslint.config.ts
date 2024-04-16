@@ -4,7 +4,7 @@ export default antfu(
   {
     formatters: true,
     ignores: ['*.min.js'],
-    lessOptionateed: true,
+    lessOpinionated: true,
   },
   {
     rules: {

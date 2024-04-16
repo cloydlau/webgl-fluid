@@ -3,7 +3,7 @@
   "PascalCasedName": "WebGLFluid",
   "version": "0.3.7",
   "private": false,
-  "description": "ES Module support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
+  "description": "ESM support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
   "author": {
     "name": "Cloyd Lau",
     "url": "https://github.com/cloydlau"
@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.14.0",
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "case-police": "^0.6.1",
     "cross-spawn": "^7.0.3",
     "del": "^7.1.0",
@@ -63,7 +63,7 @@
     "semver": "^7.6.0",
     "simple-git-hooks": "^2.11.1",
     "vite": "^4",
-    "vitepress": "^1.0.2"
+    "vitepress": "^1.1.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",

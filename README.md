@@ -5,25 +5,27 @@
 </h1>
 
 <p align="center">
-  ES Module support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>.
+  ESM support for <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation">WebGL-Fluid-Simulation</a>.
 </p>
 
 <p align="center">
   <a href="https://cloydlau.github.io/demo/webgl-fluid.html"><img alt="playground" src="https://img.shields.io/badge/Playground-blue?color=9BE4E0"></a>
+  <br>
+  <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits"></a>
+  <a href="https://github.com/antfu/eslint-config"><img alt="code style" src="https://antfu.me/badge-code-style.svg"></a>
+  <br>
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://badgen.net/bundlephobia/dependency-count/webgl-fluid"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="npm downloads" src="https://img.shields.io/npm/dt/webgl-fluid?logo=npm&color=rgba(203,0,0,0.9)"></a>
-  <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits"></a>
 </p>
 
 <br>
 
 ## Features
 
-- Hover to activate by default, can also be click
-- Control whether to trigger multiple random splats initially and automatically (at intervals)
-- Set the splats' count
-- Background image
+- 👆 Hover to activate by default, can also be click
+- ✨ Control whether to generate **configurable number** of random splats at **initialization** and at **intervals**
+- 🖼️ Background image
 
 <br>
 
@@ -34,8 +36,6 @@
 ```shell
 npm i webgl-fluid
 ```
-
-<a name="CDN"></a>
 
 ### CDN + ESM
 
@@ -95,7 +95,8 @@ npm i webgl-fluid
 WebGLFluid(document.querySelector('canvas'), {
   TRIGGER: 'hover',
   IMMEDIATE: true,
-  INTERVAL: 0,
+  AUTO: false,
+  INTERVAL: 3000,
   SIM_RESOLUTION: 128,
   DYE_RESOLUTION: 1024,
   CAPTURE_RESOLUTION: 512,
@@ -127,7 +128,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Hover to Activate
+## Trigger Mode
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
@@ -141,7 +142,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
-  IMMEDIATE: true, // Whether to trigger multiple random splats when initialized
+  IMMEDIATE: true,
 })
 ```
 
@@ -151,6 +152,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
+  AUTO: true, // Whether to enable auto-splating
   INTERVAL: 3000, // The time (in milliseconds) the timer should delay in between auto-splating
 })
 ```
@@ -161,7 +163,7 @@ WebGLFluid(document.querySelector('canvas'), {
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
-  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial or automatic splats' count
+  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5,
 })
 ```
 
@@ -198,34 +200,6 @@ Set it to `false` to get pure color.
 <br>
 
 ## Example
-
-### Vanilla JS
-
-```html
-<!-- index.html -->
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-
-  <body>
-    <canvas style="width: 100vw; height: 100vh" />
-    <script src="src/index.js"></script>
-  </body>
-</html>
-```
-
-```ts
-// src/index.js
-
-import WebGLFluid from 'webgl-fluid'
-
-WebGLFluid(document.querySelector('canvas'), {
-  // options
-})
-```
 
 ### Vue 3
 
@@ -276,6 +250,34 @@ canvas {
   height: 100vh;
 }
 </style>
+```
+
+### Vanilla JS or Any Other Framework
+
+```html
+<!-- index.html -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <canvas style="width: 100vw; height: 100vh" />
+    <script src="src/index.js"></script>
+  </body>
+</html>
+```
+
+```ts
+// src/index.js
+
+import WebGLFluid from 'webgl-fluid'
+
+WebGLFluid(document.querySelector('canvas'), {
+  // options
+})
 ```
 
 <br>

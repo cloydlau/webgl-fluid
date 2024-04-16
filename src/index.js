@@ -1,21 +1,21 @@
 /*
-MIT License
-Copyright (c) 2017 Pavel Dobryakov
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+  MIT License
+  Copyright (c) 2017 Pavel Dobryakov
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
 */
 
 'use strict'
@@ -33,7 +33,8 @@ export default function (el, config) {
   config = {
     IMMEDIATE: true,
     TRIGGER: 'hover',
-    INTERVAL: 0,
+    AUTO: false,
+    INTERVAL: 3000,
     SIM_RESOLUTION: 128,
     DYE_RESOLUTION: 1024,
     CAPTURE_RESOLUTION: 512,
@@ -134,7 +135,7 @@ export default function (el, config) {
       formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType)
     }
 
-    ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', formatRGBA === null ? 'not supported' : 'supported')
+    ga('send', 'event', isWebGL2 ? 'webgl2' : 'webgl', formatRGBA ? 'supported' : 'not supported')
 
     return {
       gl,
@@ -211,9 +212,6 @@ export default function (el, config) {
         splatStack.push(Number.parseInt(Math.random() * 20) + 5)
       },
     }, 'fun').name('Random splats')
-
-    const intervalFolder = gui.addFolder('INTERVAL')
-    intervalFolder.add(config, 'INTERVAL', 0, 10000, 0).name('The time (in milliseconds) the timer should delay in between auto-splating').listen()
 
     const bloomFolder = gui.addFolder('Bloom')
     bloomFolder.add(config, 'BLOOM').name('enabled').onFinishChange(updateKeywords)
@@ -366,7 +364,7 @@ export default function (el, config) {
       }
 
       let program = this.programs[hash]
-      if (program === null) {
+      if (!program) {
         const fragmentShader = compileShader(gl.FRAGMENT_SHADER, this.fragmentShaderSource, keywords)
         program = createProgram(this.vertexShader, fragmentShader)
         this.programs[hash] = program
@@ -435,7 +433,7 @@ export default function (el, config) {
   }
 
   function addKeywords(source, keywords) {
-    if (keywords === null) {
+    if (!keywords) {
       return source
     }
 
@@ -923,7 +921,7 @@ export default function (el, config) {
     const r = ext.formatR
     const filtering = ext.supportLinearFiltering ? gl.LINEAR : gl.NEAREST
 
-    if (dye === null) {
+    if (!dye) {
       dye = createDoubleFBO(dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, texType, filtering)
     }
 
@@ -931,7 +929,7 @@ export default function (el, config) {
       dye = resizeDoubleFBO(dye, dyeRes.width, dyeRes.height, rgba.internalFormat, rgba.format, texType, filtering)
     }
 
-    if (velocity === null) {
+    if (!velocity) {
       velocity = createDoubleFBO(simRes.width, simRes.height, rg.internalFormat, rg.format, texType, filtering)
     }
 
@@ -1119,15 +1117,15 @@ export default function (el, config) {
   initFramebuffers()
   config.IMMEDIATE && multipleSplats(config.SPLAT_COUNT)
 
-  function autoSplatingAtIntervals() {
-    if (config.INTERVAL && !config.PAUSED) {
+  function autoSplating() {
+    if (config.AUTO && config.INTERVAL && !config.PAUSED) {
       splatStack.push(config.SPLAT_COUNT)
     }
 
-    setTimeout(autoSplatingAtIntervals, config.INTERVAL)
+    setTimeout(autoSplating, config.INTERVAL)
   }
 
-  setTimeout(autoSplatingAtIntervals, config.INTERVAL)
+  setTimeout(autoSplating, config.INTERVAL)
 
   let lastUpdateTime = Date.now()
   let colorUpdateTimer = 0.0
@@ -1277,7 +1275,7 @@ export default function (el, config) {
       blur(sunrays, sunraysTemp, 1)
     }
 
-    if (target === null || !config.TRANSPARENT) {
+    if (!target || !config.TRANSPARENT) {
       gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA)
       gl.enable(gl.BLEND)
     }
@@ -1285,16 +1283,16 @@ export default function (el, config) {
       gl.disable(gl.BLEND)
     }
 
-    const width = target === null ? gl.drawingBufferWidth : target.width
-    const height = target === null ? gl.drawingBufferHeight : target.height
+    const width = target ? target.width : gl.drawingBufferWidth
+    const height = target ? target.height : gl.drawingBufferHeight
     gl.viewport(0, 0, width, height)
 
-    const fbo = target === null ? null : target.fbo
+    const fbo = target ? target.fbo : null
     if (!config.TRANSPARENT) {
       drawColor(fbo, normalizeColor(config.BACK_COLOR))
     }
 
-    if (target === null && config.TRANSPARENT) {
+    if (!target && config.TRANSPARENT) {
       drawCheckerboard(fbo)
     }
 
@@ -1461,7 +1459,7 @@ export default function (el, config) {
     const posX = scaleByPixelRatio(e.offsetX)
     const posY = scaleByPixelRatio(e.offsetY)
     let pointer = pointers.find(p => p.id === -1)
-    if (pointer === null) {
+    if (!pointer) {
       pointer = new PointerPrototype()
     }
 
