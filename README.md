@@ -107,7 +107,7 @@ WebGLFluid(document.querySelector('canvas'), {
   CURL: 30,
   SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
-  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5, // Initial or automatic splats' count
+  SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5,
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
