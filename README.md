@@ -24,9 +24,9 @@
 
 ## Features
 
-- 👆 Hover to activate by default, can also be click
-- ✨ Control whether to generate **configurable number** of random splats at **initialization** and at **intervals**
-- 🖼️ Background image
+- Hover to activate by default, can also be click
+- Control whether to generate **configurable number** of random splats at **initialization** and at **intervals**
+- Background image
 
 <br>
 
