@@ -18,6 +18,7 @@
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="npm downloads" src="https://img.shields.io/npm/dt/webgl-fluid?logo=npm&color=rgba(203,0,0,0.9)"></a>
   <a href="https://www.jsdelivr.com/package/npm/webgl-fluid"><img alt="jsdelivr downloads" src="https://data.jsdelivr.com/v1/package/npm/webgl-fluid/badge?style=rounded"></a>
+  <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=versions"><img alt="created at" src="https://img.shields.io/github/created-at/cloydlau/webgl-fluid?&color=rgba(0,0,0,.6)"></a>
 </p>
 
 <br>
