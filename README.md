@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://cloydlau.github.io/demo/webgl-fluid.html"><img alt="playground" src="https://img.shields.io/badge/Playground-blue?color=9BE4E0"></a>
+  <a href="https://cloydlau.github.io/playground/webgl-fluid/"><img alt="playground" src="https://img.shields.io/badge/Playground-blue?color=9BE4E0"></a>
   <br>
   <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits"></a>
   <a href="https://github.com/antfu/eslint-config"><img alt="code style" src="https://antfu.me/badge-code-style.svg"></a>
@@ -17,7 +17,7 @@
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=dependencies"><img alt="zero dependencies" src="https://badgen.net/bundlephobia/dependency-count/webgl-fluid"></a>
   <a href="https://bundlephobia.com/package/webgl-fluid"><img alt="minzipped size" src="https://img.shields.io/bundlephobia/minzip/webgl-fluid"></a>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="npm downloads" src="https://img.shields.io/npm/dt/webgl-fluid?logo=npm&color=rgba(203,0,0,0.9)"></a>
-  <a href="https://www.jsdelivr.com/package/npm/webgl-fluid"><img alt="jsdelivr downloads" src="https://data.jsdelivr.com/v1/package/npm/webgl-fluid/badge?style=rounded"></a>
+  <a href="https://www.jsdelivr.com/package/npm/webgl-fluid"><img alt="jsDelivr downloads" src="https://data.jsdelivr.com/v1/package/npm/webgl-fluid/badge?period=all&style=rounded"></a>
   <a href="https://www.npmjs.com/package/webgl-fluid?activeTab=versions"><img alt="created at" src="https://img.shields.io/github/created-at/cloydlau/webgl-fluid?&color=rgba(0,0,0,.6)"></a>
 </p>
 
