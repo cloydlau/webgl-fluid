@@ -13,6 +13,7 @@
   <br>
   <a href="https://conventionalcommits.org"><img alt="conventional commits" src="https://img.shields.io/badge/commits-Conventional-FE5196.svg?logo=conventionalcommits"></a>
   <a href="https://github.com/antfu/eslint-config"><img alt="code style" src="https://antfu.me/badge-code-style.svg"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fcloydlau%2Fwebgl-fluid?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcloydlau%2Fwebgl-fluid.svg?type=shield"/></a>
   <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xOS4wMSAxNS4xNjNWNy45OTdDMTkuMDA1IDYuMzkxIDE3LjkzMyA0IDE1IDRWMmwtNCAzbDQgM1Y2YzEuODI5IDAgMi4wMDEgMS41MzkgMi4wMSAydjcuMTYzYy0xLjQ0LjQzNC0yLjUgMS43NTctMi41IDMuMzM3YzAgMS45MyAxLjU3IDMuNSAzLjUgMy41czMuNS0xLjU3IDMuNS0zLjVjMC0xLjU4LTEuMDYtMi45MDMtMi41LTMuMzM3bS0xIDQuODM3Yy0uODI3IDAtMS41LS42NzMtMS41LTEuNXMuNjczLTEuNSAxLjUtMS41czEuNS42NzMgMS41IDEuNXMtLjY3MyAxLjUtMS41IDEuNU05LjUgNS41QzkuNSAzLjU3IDcuOTMgMiA2IDJTMi41IDMuNTcgMi41IDUuNWMwIDEuNTggMS4wNiAyLjkwMyAyLjUgMy4zMzd2Ni4zMjZjLTEuNDQuNDM0LTIuNSAxLjc1Ny0yLjUgMy4zMzdDMi41IDIwLjQzIDQuMDcgMjIgNiAyMnMzLjUtMS41NyAzLjUtMy41YzAtMS41OC0xLjA2LTIuOTAzLTIuNS0zLjMzN1Y4LjgzN0M4LjQ0IDguNDAzIDkuNSA3LjA4IDkuNSA1LjVtLTUgMEM0LjUgNC42NzMgNS4xNzMgNCA2IDRzMS41LjY3MyAxLjUgMS41UzYuODI3IDcgNiA3cy0xLjUtLjY3My0xLjUtMS41bTMgMTNjMCAuODI3LS42NzMgMS41LTEuNSAxLjVzLTEuNS0uNjczLTEuNS0xLjVTNS4xNzMgMTcgNiAxN3MxLjUuNjczIDEuNSAxLjUiLz48L3N2Zz4="></a>
   <br>
   <a href="https://npmcharts.com/compare/webgl-fluid"><img alt="npm downloads" src="https://img.shields.io/npm/dt/webgl-fluid?logo=npm&color=rgba(203,0,0,0.9)"></a>
@@ -290,3 +291,7 @@ WebGLFluid(document.querySelector('canvas'), {
 Detailed changes for each release are documented in the [release notes](https://github.com/cloydlau/webgl-fluid/releases)
 
 <br>
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcloydlau%2Fwebgl-fluid.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcloydlau%2Fwebgl-fluid?ref=badge_large)
