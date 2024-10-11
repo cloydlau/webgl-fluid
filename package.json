@@ -1,6 +1,7 @@
 {
   "name": "webgl-fluid",
   "PascalCasedName": "WebGLFluid",
+  "type": "commonjs",
   "version": "0.3.8",
   "private": false,
   "description": "ESM support for https://github.com/PavelDoGreat/WebGL-Fluid-Simulation.",
@@ -9,7 +10,10 @@
     "url": "https://github.com/cloydlau"
   },
   "license": "MIT",
-  "repository": "https://github.com/cloydlau/webgl-fluid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloydlau/webgl-fluid.git"
+  },
   "keywords": [
     "background",
     "fluid",
@@ -20,8 +24,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/webgl-fluid.mjs",
-      "require": "./dist/webgl-fluid.umd.js"
+      "import": {
+        "default": "./dist/webgl-fluid.mjs"
+      },
+      "require": {
+        "default": "./dist/webgl-fluid.umd.js"
+      }
     },
     "./*": "./*"
   },
@@ -35,35 +43,38 @@
   ],
   "scripts": {
     "build": "vite build",
+    "license-scan": "license-checker --summary --out ./depencency-licenses.txt",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
     "release": "esno ./scripts/release.mts",
+    "sync-to-cnpm": "npx cnpm sync && curl -L https://npmmirror.com/sync/webgl-fluid",
     "lint": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\" --ignore-pattern stats.html",
     "lint:fix": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\" --ignore-pattern stats.html --fix",
     "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx only-allow pnpm",
-    "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || npx simple-git-hooks"
+    "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || (npx simple-git-hooks && pnpm license-scan)"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.14.0",
-    "@commitlint/cli": "^19.2.2",
-    "@commitlint/config-conventional": "^19.2.2",
-    "case-police": "^0.6.1",
+    "@antfu/eslint-config": "^3.7.3",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "case-police": "^0.7.0",
+    "cnpm": "^9.4.0",
     "cross-spawn": "^7.0.3",
-    "del": "^7.1.0",
-    "eslint": "npm:eslint-ts-patch@8.57.0-0",
-    "eslint-plugin-format": "^0.1.0",
-    "eslint-ts-patch": "8.57.0-0",
-    "esno": "^4.7.0",
+    "del": "^8.0.0",
+    "eslint-plugin-format": "^0.1.2",
+    "esno": "^4.8.0",
     "kolorist": "^1.8.0",
-    "lint-staged": "^15.2.2",
+    "license-checker": "^25.0.1",
+    "lint-staged": "^15.2.10",
     "only-allow": "^1.2.1",
     "open": "^10.1.0",
     "prompts": "^2.4.2",
+    "publint": "^0.2.11",
     "rollup-plugin-visualizer": "^5.12.0",
-    "semver": "^7.6.0",
+    "semver": "^7.6.3",
     "simple-git-hooks": "^2.11.1",
     "vite": "^4",
-    "vitepress": "^1.1.0"
+    "vitepress": "^1.4.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",

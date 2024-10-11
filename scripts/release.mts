@@ -1,44 +1,34 @@
-// pnpm i esno prompts semver cross-spawn kolorist del open -D -w
-
 import fs from 'node:fs'
-import prompts from 'prompts'
-import * as semver from 'semver'
 import spawn from 'cross-spawn'
 import { cyan } from 'kolorist'
-import { deleteAsync } from 'del'
-import open from 'open'
+import prompts from 'prompts'
+import * as semver from 'semver'
 
 const docsPath = ['./README.md']
 
 async function release() {
-  console.log(cyan('Fetching origin...'))
+  console.log(cyan('\nFetching origin...'))
   if (spawn.sync('git', ['pull'], { stdio: 'inherit' }).status === 1) {
     return
   }
 
-  console.log(cyan('Linting staged...'))
+  console.log(cyan('\nLinting staged...'))
   if (spawn.sync('npx', ['lint-staged'], { stdio: 'inherit' }).status === 1) {
     return
   }
 
-  /* console.log(cyan('Unit testing...'))
-  if (spawn.sync('pnpm', ['test-unit'], { stdio: 'inherit' }).status === 1) {
-    return
-  } */
-
-  console.log(cyan('Building...'))
+  console.log(cyan('\nBuilding...'))
   if (spawn.sync('pnpm', ['build'], { stdio: 'inherit' }).status === 1) {
     return
   }
 
-  console.log(cyan('Packing...'))
-  if (spawn.sync('npm', ['pack'], { stdio: 'inherit' }).status === 1) {
+  console.log(cyan('\nPublinting...'))
+  if (spawn.sync('npx', ['publint'], { stdio: 'inherit' }).status === 1) {
     return
   }
-  await deleteAsync(['./*.tgz'])
 
-  const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
-  const { name, version: currentVersion } = pkg
+  const npmConfig = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
+  const { name, version: currentVersion } = npmConfig
 
   const choices = Array.from(['patch', 'minor', 'major', 'prerelease', 'prepatch', 'preminor', 'premajor', 'custom'], title => ({
     title,
@@ -114,21 +104,21 @@ async function release() {
     }
   }
 
-  pkg.version = targetVersion
-  fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
+  npmConfig.version = targetVersion
+  fs.writeFileSync('./package.json', JSON.stringify(npmConfig, null, 2))
 
-  console.log(cyan('Committing...'))
+  console.log(cyan('\nCommitting...'))
   if (spawn.sync('git', ['add', '-A'], { stdio: 'inherit' }).status === 1) {
     return
   }
   if (spawn.sync('git', ['commit', '-m', `release: v${targetVersion}`], { stdio: 'inherit' }).status === 1) {
     // pre-commit 时如果 lint 失败，则恢复版本号
-    pkg.version = currentVersion
-    fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
+    npmConfig.version = currentVersion
+    fs.writeFileSync('./package.json', JSON.stringify(npmConfig, null, 2))
     return
   }
 
-  console.log(cyan('Pushing...'))
+  console.log(cyan('\nPushing...'))
   if (spawn.sync('git', ['push'], { stdio: 'inherit' }).status === 1) {
     return
   }
@@ -139,14 +129,13 @@ async function release() {
     return
   }
 
-  console.log(cyan('Publishing...'))
+  console.log(cyan('\nPublishing to npm...'))
   if (spawn.sync('npm', ['publish', '--registry=https://registry.npmjs.org'], { stdio: 'inherit' }).status === 1) {
     return
   }
 
-  console.log(cyan('Updating npmmirror...'))
-  spawn.sync('cnpm', ['sync'], { stdio: 'inherit' })
-  open(`https://npmmirror.com/sync/${name}`)
+  console.log(cyan('\nSync to cnpm...'))
+  spawn.sync('pnpm', ['sync-to-cnpm'], { stdio: 'inherit' })
 }
 
 try {

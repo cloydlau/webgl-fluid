@@ -1,0 +1,13 @@
+├─ MIT: 302
+├─ ISC: 149
+├─ Apache-2.0: 16
+├─ BSD-2-Clause: 11
+├─ BSD-3-Clause: 5
+├─ BlueOak-1.0.0: 4
+├─ CC0-1.0: 2
+├─ Artistic-2.0: 1
+├─ MIT,Apache2: 1
+├─ Apache 2.0: 1
+├─ (BSD-2-Clause OR MIT OR Apache-2.0): 1
+├─ CC-BY-3.0: 1
+└─ (MIT OR CC0-1.0): 1
