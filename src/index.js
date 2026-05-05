@@ -46,6 +46,7 @@ export default function (el, config) {
     SPLAT_RADIUS: 0.25,
     SPLAT_FORCE: 6000,
     SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5,
+    SPLAT_COLOR: undefined,
     SHADING: true,
     COLORFUL: true,
     COLOR_UPDATE_SPEED: 10,
@@ -74,7 +75,7 @@ export default function (el, config) {
     this.deltaY = 0
     this.down = false
     this.moved = false
-    this.color = generateColor()
+    this.color = getSplatColor()
   }
 
   const pointers = []
@@ -1175,7 +1176,7 @@ export default function (el, config) {
     if (colorUpdateTimer >= 1) {
       colorUpdateTimer = wrap(colorUpdateTimer, 0, 1)
       pointers.forEach((p) => {
-        p.color = generateColor()
+        p.color = getSplatColor()
       })
     }
   }
@@ -1416,10 +1417,12 @@ export default function (el, config) {
 
   function multipleSplats(amount) {
     for (let i = 0; i < amount; i++) {
-      const color = generateColor()
-      color.r *= 10.0
-      color.g *= 10.0
-      color.b *= 10.0
+      const color = getSplatColor()
+      if (!config.SPLAT_COLOR) {
+        color.r *= 10.0
+        color.g *= 10.0
+        color.b *= 10.0
+      }
       const x = Math.random()
       const y = Math.random()
       const dx = 1000 * (Math.random() - 0.5)
@@ -1531,7 +1534,7 @@ export default function (el, config) {
     pointer.deltaX = 0
     pointer.deltaY = 0
     if (config.COLORFUL) {
-      pointer.color = generateColor()
+      pointer.color = getSplatColor()
     }
   }
 
@@ -1579,6 +1582,11 @@ export default function (el, config) {
     c.g *= 0.15
     c.b *= 0.15
     return c
+  }
+
+  function getSplatColor() {
+    const color = config.SPLAT_COLOR || generateColor()
+    return { r: color.r, g: color.g, b: color.b }
   }
 
   function HSVtoRGB(h, s, v) {

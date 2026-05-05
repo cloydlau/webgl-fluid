@@ -29,6 +29,7 @@
 
 - Hover to activate by default, can also be click
 - Control whether to generate **configurable number** of random splats at **initialization** and at **intervals**
+- Set a custom splat color
 - Background image
 
 <br>
@@ -112,12 +113,12 @@ WebGLFluid(document.querySelector('canvas'), {
   SPLAT_RADIUS: 0.35,
   SPLAT_FORCE: 6000,
   SPLAT_COUNT: Number.parseInt(Math.random() * 20) + 5,
+  SPLAT_COLOR: undefined,
   SHADING: true,
   COLORFUL: true,
   COLOR_UPDATE_SPEED: 10,
   PAUSED: false,
   BACK_COLOR: { r: 0, g: 0, b: 0 },
-  DEFAULT_COLOR: { r: 0.01, g: 0.01, b: 0.01 },
   TRANSPARENT: false,
   BLOOM: true,
   BLOOM_ITERATIONS: 8,
@@ -174,26 +175,19 @@ WebGLFluid(document.querySelector('canvas'), {
 
 <br>
 
-## Default dye color (DEFAULT_COLOR)
+## Set the Splat Color
 
-DEFAULT_COLOR is the RGB used for **pointer** splats (hover). The library’s own default is `{ r: 0.09, g: 0.12, b: 0.15 }`. It is only applied when you do **not** pass DEFAULT_COLOR in your options.
+`SPLAT_COLOR` replaces the random dye color used by splats. The value should be an RGB object and is used directly as the dye color.
 
-**Omit `DEFAULT_COLOR`** pointer splats use the built-in default above, and **each mouse/touch down** picks a **new random** dye color (`generateColor()`).
-
-```ts
-WebGLFluid(document.querySelector('canvas'), {
-  DEFAULT_COLOR: { r: 0.09, g: 0, b: 0 },
-})
-```
-
-Stable single color for hover and click (pair with `COLORFUL: false` if you do not want the palette to drift over time):
+Omit `SPLAT_COLOR` to keep the default random colors.
 
 ```ts
 WebGLFluid(document.querySelector('canvas'), {
-  COLORFUL: false,
-  DEFAULT_COLOR: { r: 0.1, g: 0.05, b: 0.2 },
+  SPLAT_COLOR: { r: 0.1, g: 0.05, b: 0.2 },
 })
 ```
+
+When `SPLAT_COLOR` is set, it takes precedence over `COLORFUL` and disables random color changes.
 
 <br>
 
