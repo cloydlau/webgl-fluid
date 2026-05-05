@@ -42,6 +42,7 @@
     "docs"
   ],
   "scripts": {
+    "dev": "vite --open /esm.html",
     "build": "vite build",
     "license-scan": "license-checker --summary --out ./depencency-licenses.txt",
     "serve": "vite preview",

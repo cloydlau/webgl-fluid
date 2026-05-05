@@ -20,7 +20,6 @@
 
 'use strict'
 
-import './dat.gui.min'
 
 function ga() {
 

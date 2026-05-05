@@ -9,17 +9,13 @@
 
   <body>
     <canvas style="width: 100vw; height: 100vh; background: rgb(0, 0, 0)" />
-    <script type="importmap">
-      {
-        "imports": {
-          "webgl-fluid": "./dist/webgl-fluid.mjs"
-        }
-      }
-    </script>
     <script type="module">
-      import WebGLFluid from 'webgl-fluid'
+      import WebGLFluid from './src/index.js'
 
-      WebGLFluid(document.querySelector('canvas'))
+      WebGLFluid(document.querySelector('canvas'), {
+        // COLORFUL: false,
+        SPLAT_COLOR: { r: 0.1, g: 0.05, b: 0.2 },
+      })
     </script>
   </body>
 </html>
