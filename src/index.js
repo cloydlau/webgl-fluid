@@ -18,8 +18,9 @@
   SOFTWARE.
 */
 
-'use strict'
+/* eslint-disable financial/no-division, financial/no-float-calculation -- Fluid simulation uses normalized canvas coordinates and shader math, not financial calculations. */
 
+'use strict'
 
 function ga() {
 
