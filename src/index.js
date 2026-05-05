@@ -74,7 +74,7 @@ export default function (el, config) {
     this.deltaY = 0
     this.down = false
     this.moved = false
-    this.color = [30, 0, 300]
+    this.color = generateColor()
   }
 
   const pointers = []
@@ -1530,7 +1530,9 @@ export default function (el, config) {
     pointer.prevTexcoordY = pointer.texcoordY
     pointer.deltaX = 0
     pointer.deltaY = 0
-    pointer.color = generateColor()
+    if (config.COLORFUL) {
+      pointer.color = generateColor()
+    }
   }
 
   function updatePointerMoveData(pointer, posX, posY) {
