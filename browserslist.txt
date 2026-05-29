@@ -67,7 +67,6 @@ chrome 87
 chrome 86
 chrome 85
 chrome 84
-chrome 83
 edge 147
 edge 146
 edge 145
@@ -132,7 +131,6 @@ edge 87
 edge 86
 edge 85
 edge 84
-edge 83
 firefox 150
 firefox 149
 firefox 148
@@ -207,7 +205,6 @@ firefox 80
 firefox 79
 firefox 78
 firefox 77
-firefox 76
 ie 11
 ios_saf 26.4
 ios_saf 26.3

@@ -38,28 +38,30 @@
   "unpkg": "./dist/webgl-fluid.umd.js",
   "jsdelivr": "./dist/webgl-fluid.umd.js",
   "files": [
-    "dist",
-    "docs"
+    "dist"
   ],
   "scripts": {
     "dev": "vite --open /esm.html",
     "build": "vite build",
     "serve": "vite preview",
     "doc": "vitepress dev --open /README",
+    "doc:build": "vitepress build",
+    "doc:preview": "vitepress preview",
     "release": "esno ./scripts/release.mjs",
     "lint": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\"",
     "lint:fix": "eslint \"**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,json,md,html,css,scss,sass}\" --fix",
-    "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || (npx only-allow pnpm && pnpm config set registry https://registry.npmmirror.com)",
-    "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || (npx simple-git-hooks && git config core.hooksPath .git/hooks/)",
-    "lint:inspect": "npx @eslint/config-inspector@latest"
+    "preinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || (pnpm dlx only-allow pnpm && pnpm config set registry https://registry.npmmirror.com)",
+    "postinstall": "node -e \"if (process.env.INIT_CWD === process.cwd()) { process.exit(1) }\" || (pnpm exec simple-git-hooks && git config core.hooksPath .git/hooks/)",
+    "lint:inspect": "pnpm exec eslint-config-inspector"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6",
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
+    "@antfu/eslint-config": "^9.0.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/config-inspector": "^3.0.4",
     "@eslint/eslintrc": "^3.3.5",
-    "@vitejs/plugin-legacy": "^8.0.1",
-    "ansis": "^4.2.0",
+    "@vitejs/plugin-legacy": "^8.0.2",
+    "ansis": "^4.3.0",
     "browserslist": "^4.28.2",
     "browserslist-to-esbuild": "^2.1.1",
     "case-police": "^2.2.1",
@@ -67,28 +69,29 @@
     "code-inspector-plugin": "^1.5.1",
     "cross-spawn": "^7.0.6",
     "del": "^8.0.1",
-    "eslint": "^9",
+    "eslint": "^10.4.0",
     "eslint-plugin-financial": "^0.1.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-no-unsanitized": "^4.1.5",
     "esno": "^4.8.0",
     "kolorist": "^1.8.0",
-    "lint-staged": "^16.4.0",
-    "npm-deprecated-check": "^1.8.0",
+    "license-checker": "^25.0.1",
+    "lint-staged": "^17.0.5",
+    "npm-deprecated-check": "^2.1.1",
     "only-allow": "^1.2.2",
     "open": "^11.0.0",
     "prompts": "^2.4.2",
-    "publint": "^0.3.18",
+    "publint": "^0.3.21",
     "rollup-plugin-visualizer": "^7.0.1",
-    "semver": "^7.7.4",
+    "semver": "^7.8.1",
     "simple-git-hooks": "^2.13.1",
-    "vite": "^8.0.10",
+    "vite": "^8.0.14",
     "vitepress": "^1.6.4",
     "zhlint": "^0.8.2"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "npx --no -- commitlint --edit ${1}"
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint --edit ${1}"
   },
   "lint-staged": {
     "*.md": [
@@ -108,7 +111,6 @@
     "safari >= 14",
     "edge >= 88",
     "ios >= 12",
-    "android >= 9",
-    "not ie <= 11"
+    "android >= 9"
   ]
 }

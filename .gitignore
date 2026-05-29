@@ -5,9 +5,11 @@
 .output
 .swc
 .vitepress/cache
+.vitepress/dist
 coverage
 dist
 node_modules
+.pnpm-store
 project.private.config.json
 stats.html
 *.local
